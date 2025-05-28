@@ -31,3 +31,7 @@ function decrement(){
     count = count - 1
     document.getElementById("counter-el").innerHTML = count
 }
+
+function save(){
+    console.log(count)
+}
