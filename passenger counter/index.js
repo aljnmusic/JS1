@@ -18,5 +18,5 @@
 //console.log(dogAge)
 
 function increment(){
-    console.log("The button was click")
+    console.log("The button was clicked")
 }
