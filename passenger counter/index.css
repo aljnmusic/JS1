@@ -19,3 +19,7 @@ body {
 #increment-btn:hover{
     background-color: #f4826b;
 }
+
+#counter-el{
+    font-size:  40px;
+}

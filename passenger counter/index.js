@@ -17,6 +17,9 @@
 //let dogAge = myAge * humanDogRation;
 //console.log(dogAge)
 
+let count = 0
+
 function increment(){
-    console.log("The button was clicked")
+    count = count + 1
+    document.getElementById("counter-el").innerHTML = count
 }
