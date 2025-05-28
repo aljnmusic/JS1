@@ -5,9 +5,14 @@
 
 //console.log(myAge);
 
-let firstBatch = 5;
-let secondBatch = 8;
+//let firstBatch = 5;
+//let secondBatch = 8;
 
-let count = firstBatch + secondBatch;
+//let count = firstBatch + secondBatch;
 
-console.log(count)
+//console.log(count)
+
+let myAge = 28;
+let humanDogRation = 7;
+let dogAge = myAge * humanDogRation;
+console.log(dogAge);
