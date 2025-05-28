@@ -12,7 +12,11 @@
 
 //console.log(count)
 
-let myAge = 28;
-let humanDogRation = 7;
-let dogAge = myAge * humanDogRation;
-console.log(dogAge)
+//let myAge = 28;
+//let humanDogRation = 7;
+//let dogAge = myAge * humanDogRation;
+//console.log(dogAge)
+
+function increment(){
+    console.log("The button was click")
+}

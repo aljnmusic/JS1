@@ -1,0 +1,21 @@
+body {
+    background-color: #90a6ea;
+    text-align: center;
+    font-family: monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#increment-btn{
+    background-color: tomato;
+    color: white;
+    width: 50%;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#increment-btn:hover{
+    background-color: #f4826b;
+}
