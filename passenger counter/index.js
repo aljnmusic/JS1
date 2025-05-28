@@ -10,4 +10,4 @@ let secondBatch = 8;
 
 let count = firstBatch + secondBatch;
 
-console.log(count);
+console.log(count)
