@@ -1,1 +1,1 @@
-document.getElementById("counter-el").innerText = 5;
+document.getElementById("counter-el").innerText = 5
