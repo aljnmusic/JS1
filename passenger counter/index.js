@@ -17,11 +17,14 @@
 //let dogAge = myAge * humanDogRation;
 //console.log(dogAge)
 
+let countEL = document.getElementById("counter-el")
+
 let count = 0
 
 function increment(){
     count = count + 1
-    document.getElementById("counter-el").innerHTML = count
+    //document.getElementById("counter-el").innerHTML = count
+    countEL.innerText = count
 }
 
 function decrement(){
