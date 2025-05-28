@@ -29,5 +29,5 @@ function increment(){
 
 function decrement(){
     count = count - 1
-    document.getElementById("counter-el").innerHTML = count;
+    document.getElementById("counter-el").innerHTML = count
 }
