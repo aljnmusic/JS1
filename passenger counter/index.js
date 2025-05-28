@@ -15,4 +15,4 @@
 let myAge = 28;
 let humanDogRation = 7;
 let dogAge = myAge * humanDogRation;
-console.log(dogAge);
+console.log(dogAge)
