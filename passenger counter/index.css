@@ -23,3 +23,16 @@ body {
 #counter-el{
     font-size:  40px;
 }
+
+#decrement-btn{
+    background-color: darkred;
+    color: white;
+    width: 50%;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+#decrement-btn:hover{
+    background-color: #9c3e3e;
+}
