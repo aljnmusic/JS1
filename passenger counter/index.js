@@ -37,5 +37,8 @@ function save(){
     let counter = count
     let dash = " - "
     let countDash = counter + dash
-    saveEl.innerText += countDash + " "
+    saveEl.textContent += countDash + " "
+
+    countEL.innerText = "0"
+    count = 0
 }
