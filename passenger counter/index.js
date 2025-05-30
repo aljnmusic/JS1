@@ -18,6 +18,7 @@
 //console.log(dogAge)
 
 let countEL = document.getElementById("counter-el")
+let saveEl = document.getElementById("save-el")
 
 let count = 0
 
@@ -33,5 +34,8 @@ function decrement(){
 }
 
 function save(){
-    console.log(count)
+    let counter = count
+    let dash = " - "
+    let countDash = counter + dash
+    saveEl.innerText += countDash + " "
 }
