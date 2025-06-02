@@ -30,7 +30,7 @@ body{
 
 .home{
     background-color: black;
-    color: white;
+    color: red;
     border-radius: 10px;
     width: 25%;
     height: 25%;
@@ -53,7 +53,7 @@ body{
 
 .guest{
     background-color: black;
-    color: white;
+    color: red;
     border-radius: 10px;
     width: 25%;
     height: 25%;
