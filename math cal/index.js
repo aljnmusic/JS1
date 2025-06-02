@@ -18,4 +18,7 @@ function multiply(){
     total.innerText = "SUM: " + sum
 }
 
-function
+function divide(){
+    let sum = Number(n1.innerText) / Number(n2.innerText)
+    total.innerText = "SUM: " + sum
+}
