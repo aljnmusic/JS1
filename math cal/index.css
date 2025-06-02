@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-el{
+    width: 50%;
+    height: 50vh;
+    background-color: royalblue;
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: row;
+}
+
+.box1 p{
+    color: white;
+    padding: 10px;
+    font-size:  1.5rem;
+    text-decoration: underline;
+}
+
+.math{
+    padding: 10px;
+}
+
+.math button{
+    padding: 5px;
+    border-radius:  5px;
+}
+
+.math button:hover{
+    background-color: darkblue;
+    color: white;
+}
+
+.total p{
+    color: white;
+    font-family: monospace;
+    font-size: 1.5rem;
+}
