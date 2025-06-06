@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: forestgreen;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    color: goldenrod;
+    font-size: 2rem;
+}
+
+#welcome-el{
+    color: white;
+    font-style: italic;
+}
+
+p{
+    color: white;
+    margin-top: 20px;
+}
+
+button{
+    background-color: goldenrod;
+    margin-top: 10px;
+    font-size: 2rem;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+button:hover{
+    background-color: darkgoldenrod;
+}
