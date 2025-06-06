@@ -5,11 +5,12 @@ let hasBlackJack = false
 let isAlive = true
 let message = ""
 let messageEl = document.getElementById("welcome-el")
-let sumEl = document.getElementById("sum-el")
-
+let sumEl = document.querySelector("#sum-el")
+let cardsEl = document.querySelector("#cards-el")
 
 function startGame(){
     let s = "Sum: "
+    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
     sumEl.textContent = s + sum
     if(sum < 21){
         message = "You're Not a Black Jack!"
