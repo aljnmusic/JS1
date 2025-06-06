@@ -37,3 +37,13 @@ button{
 button:hover{
     background-color: darkgoldenrod;
 }
+
+.new-card{
+    background-color: goldenrod;
+    margin-top: 10px;
+    font-size: 2rem;
+    border-radius: 5px;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
