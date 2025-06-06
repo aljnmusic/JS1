@@ -1,17 +1,17 @@
 let firstCard = 10
-let secondCard = 12
+let secondCard = 4
 let sum = firstCard + secondCard
 let hasBlackJack = false
 let isAlive = true
 let message = ""
-let messageEl = document.getElementById("message-el")
+let messageEl = document.getElementById("welcome-el")
 
 
 function startGame(){
-    if(sum <= 20){
+    if(sum <= 21){
         message = "You're Not a Black Jack!"
     }
-    else if(sum === 20){
+    else if(sum === 21){
         message = "You are black jack!"
         hasBlackJack = true
     }
