@@ -1,6 +1,7 @@
 let firstCard = 10
 let secondCard = 11
 let sum = firstCard + secondCard
+let card = [firstCard, secondCard]
 let hasBlackJack = false
 let isAlive = true
 let message = ""
@@ -13,7 +14,7 @@ function startGame(){
 }
 function renderGame(){
     let s = "Sum: "
-    cardsEl.textContent = "Cards: " + firstCard + " " + secondCard
+    cardsEl.textContent = "Cards: " + card[0] + " " + card[1]
     sumEl.textContent = s + sum
     if(sum < 21){
         message = "You're Not a Black Jack!"
