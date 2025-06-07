@@ -29,4 +29,7 @@ function startGame(){
 
 function newCard(){
     console.log("Draw a new card!")
+    let newCard = 7
+    sum += newCard
+    startGame()
 }
