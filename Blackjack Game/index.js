@@ -14,7 +14,12 @@ function startGame(){
 }
 function renderGame(){
     let s = "Sum: "
-    cardsEl.textContent = "Cards: " + card[0] + " " + card[1]
+    cardsEl.textContent = "Cards: "
+
+    for(let i  = 0; i < card.length; i++) {
+        cardsEl.textContent += card[i] + " "
+    }
+
     sumEl.textContent = s + sum
     if(sum < 21){
         message = "You're Not a Black Jack!"
