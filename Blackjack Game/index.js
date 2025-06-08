@@ -7,11 +7,13 @@ let messageEl = document.getElementById("welcome-el")
 let sumEl = document.querySelector("#sum-el")
 let cardsEl = document.querySelector("#cards-el")
 
-let playerName = "John"
-let playerChips = 145
+let player = {
+    name: "John",
+    chips: 145
+}
 
 let playerEl = document.getElementById("player-el")
-playerEl.textContent = playerName + ": $" + playerChips
+playerEl.textContent = player.name + ": $" + player.chips
 
 function randomNumber(){
     let randNum = Math.floor(Math.random() * 13 + 1)
