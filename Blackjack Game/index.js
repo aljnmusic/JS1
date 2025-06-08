@@ -13,10 +13,10 @@ function randomNumber(){
     let randNum = Math.floor(Math.random() * 13 + 1)
 
     if(randNum === 1){
-        return randNum = 11
+        return 11
     }
-    else if(randNum === 11 || randNum === 12 ||  randNum === 13){
-        return randNum = 10
+    else if(randNum > 10){
+        return 10
     }
     else{
         return randNum
