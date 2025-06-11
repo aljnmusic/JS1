@@ -1,0 +1,28 @@
+body{
+    margin: 0;
+    padding: 10px;
+    font-family: Arial;
+}
+
+input{
+    padding-left: 10px;
+    padding-right:  10px;
+    width: 100%;
+    box-sizing:  border-box;
+}
+
+button{
+    background-color: #5f9341;
+    margin-top: 2px;
+    color:  white;
+    border-radius: 3px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+}
+
+button:hover{
+    background-color: #61d323;
+    color: black;
+    font-weight: bold;
+}
