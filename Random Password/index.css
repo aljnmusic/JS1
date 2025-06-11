@@ -1,0 +1,45 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing:  border-box;
+}
+
+body{
+    width:  100%;
+    overflow-x: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+}
+
+.pass{
+    background-color: black;
+    color: green;
+    width: 50%;
+}
+
+.pass p{
+    font-family: monospace;
+    font-size:  1.5em;
+}
+
+.generate{
+    background-color: black;
+    color: green;
+    width: 50%;
+    margin-top: 10px;
+}
+
+#generate-el{
+    padding: 5px;
+    border-color: darkgreen;
+    border-radius: 5px;
+}
+
+#generate-el:hover{
+    background-color: darkgreen;
+    color:  white;
+}
