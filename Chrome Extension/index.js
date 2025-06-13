@@ -7,6 +7,7 @@ inputBtn.addEventListener("click", function () {
     let elementEl = inputEl.value
     myLeads.push(elementEl)
     console.log(myLeads)
+    inputEl.value = ""
     renderInput()
 })
 
