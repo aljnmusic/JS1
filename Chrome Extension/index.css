@@ -26,3 +26,17 @@ button:hover{
     color: black;
     font-weight: bold;
 }
+
+ul{
+    margin-top: 20px;
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li{
+    margin-top: 5px;
+}
+
+li a{
+    color: #61d323;
+}
