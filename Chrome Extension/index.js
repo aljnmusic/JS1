@@ -8,6 +8,9 @@ inputBtn.addEventListener("click", function () {
     myLeads.push(elementEl)
     console.log(myLeads)
     inputEl.value = ""
+
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
+
     renderInput()
 })
 
