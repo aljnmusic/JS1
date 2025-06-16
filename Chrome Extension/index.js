@@ -24,6 +24,12 @@ inputBtn.addEventListener("click", function () {
     renderInput()
 })
 
+deleteEl.addEventListener("dblclick", function () {
+    localStorage.clear()
+    myLeads = []
+    renderInput()
+})
+
 function renderInput(){
     let listItems = ""
     for(let i = 0; i < myLeads.length; i++){
@@ -37,9 +43,3 @@ function renderInput(){
 
     ulEl.innerHTML = listItems
 }
-
-deleteEl.addEventListener("dblclick", function () {
-    localStorage.clear()
-    myLeads = []
-    renderInput()
-})
