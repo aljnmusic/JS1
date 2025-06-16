@@ -38,17 +38,8 @@ function renderInput(){
     ulEl.innerHTML = listItems
 }
 
-deleteEl.addEventListener("click", function () {
-    let getArray = localStorage.getItem('myLeads')
-    getArray = JSON.parse(getArray)
-
-
-    let listItems = ""
-    for(let i = 0; i < getArray.length; i++){
-        listItems = ""
-    }
-
-    ulEl.innerHTML = listItems
-
-    console.log(ulEl)
+deleteEl.addEventListener("dblclick", function () {
+    localStorage.clear()
+    myLeads = []
+    renderInput()
 })
