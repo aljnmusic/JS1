@@ -5,6 +5,13 @@ let ulEl = document.getElementById("ul-el")
 
 const leadFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
+let truthy = Boolean(leadFromLocalStorage)
+
+if (truthy) {
+    myLeads = leadFromLocalStorage
+    renderInput()
+}
+
 inputBtn.addEventListener("click", function () {
     let elementEl = inputEl.value
     myLeads.push(elementEl)
