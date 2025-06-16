@@ -3,14 +3,13 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 let ulEl = document.getElementById("ul-el")
 let deleteEl =  document.getElementById("delete-btn")
-
 const leadFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 let truthy = Boolean(leadFromLocalStorage)
 
 if (truthy) {
     myLeads = leadFromLocalStorage
-    renderInput()
+    renderInput(myLeads)
 }
 
 inputBtn.addEventListener("click", function () {
@@ -21,22 +20,22 @@ inputBtn.addEventListener("click", function () {
 
     localStorage.setItem("myLeads", JSON.stringify(myLeads))
 
-    renderInput()
+    renderInput(myLeads)
 })
 
 deleteEl.addEventListener("dblclick", function () {
     localStorage.clear()
     myLeads = []
-    renderInput()
+    renderInput(myLeads)
 })
 
-function renderInput(){
+function renderInput(leads){
     let listItems = ""
-    for(let i = 0; i < myLeads.length; i++){
+    for(let i = 0; i < leads.length; i++){
         listItems += `
                     <li>
-                        <a href='${myLeads[i]}'>
-                            ${myLeads[i]}
+                        <a href='${leads[i]}'>
+                            ${leads[i]}
                         </a> 
                     </li>`
     }
