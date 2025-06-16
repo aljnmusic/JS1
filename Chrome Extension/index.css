@@ -28,6 +28,12 @@ button:hover{
     font-weight: bold;
 }
 
+#delete-btn:hover{
+    background-color: red;
+    color: white;
+    font-weight: bold;
+}
+
 ul{
     margin-top: 20px;
     list-style-type: none;
