@@ -14,8 +14,13 @@ if (truthy) {
     renderInput(myLeads)
 }
 
+const tabs = [
+    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
+]
+
 tabBtn.addEventListener("click", function(){
-    return myLeads
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))
 })
 
 inputBtn.addEventListener("click", function () {
