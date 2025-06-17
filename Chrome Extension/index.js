@@ -3,7 +3,9 @@ const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 let ulEl = document.getElementById("ul-el")
 let deleteEl =  document.getElementById("delete-btn")
+
 const leadFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+const tabBtn = document.getElementById("tab-btn")
 
 let truthy = Boolean(leadFromLocalStorage)
 
@@ -11,6 +13,10 @@ if (truthy) {
     myLeads = leadFromLocalStorage
     renderInput(myLeads)
 }
+
+tabBtn.addEventListener("click", function(){
+    return myLeads
+})
 
 inputBtn.addEventListener("click", function () {
     let elementEl = inputEl.value
