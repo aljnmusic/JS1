@@ -20,7 +20,6 @@ tabBtn.addEventListener("click", function(){
         myLeads.push(tabs[0].url)
         localStorage.setItem("myLeads", JSON.stringify(myLeads))
         renderInput(myLeads)
-        sdf
     })
 })
 
