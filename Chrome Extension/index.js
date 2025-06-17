@@ -14,14 +14,13 @@ if (truthy) {
     renderInput(myLeads)
 }
 
-const tabs = [
-    {url: "https://www.linkedin.com/in/per-harald-borgen/"}
-]
 
 tabBtn.addEventListener("click", function(){
-    myLeads.push(tabs[0].url)
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
-    renderInput(myLeads)
+    chrome.tabs.query({active:true, currentWindow: true}, function(tabs){
+        myLeads.push(tabs[0].url)
+        localStorage.setItem("myLeads", JSON.stringify(myLeads))
+        renderInput(myLeads)
+    })
 })
 
 inputBtn.addEventListener("click", function () {
