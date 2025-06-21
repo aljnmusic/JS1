@@ -17,12 +17,7 @@ let deleteEl =  document.getElementById("delete-btn")
 
 inputBtn.addEventListener("click", function () {
     push(referenceInDB, inputEl.value)
-
-
     inputEl.value = ""
-
-
-
 })
 
 deleteEl.addEventListener("dblclick", function () {
