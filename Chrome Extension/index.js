@@ -10,7 +10,7 @@ const database = getDatabase(app)
 
 
 
-let myLeads = []
+
 const inputEl = document.getElementById("input-el")
 const inputBtn = document.getElementById("input-btn")
 let ulEl = document.getElementById("ul-el")
@@ -25,19 +25,19 @@ let truthy = Boolean(leadFromLocalStorage)
 
 
 inputBtn.addEventListener("click", function () {
-    let elementEl = inputEl.value
-    myLeads.push(elementEl)
-    console.log(myLeads)
+    console.log(inputEl.value)
+
+
     inputEl.value = ""
 
 
-    renderInput(myLeads)
+
 })
 
 deleteEl.addEventListener("dblclick", function () {
 
-    myLeads = []
-    renderInput(myLeads)
+
+
 })
 
 function renderInput(leads){
