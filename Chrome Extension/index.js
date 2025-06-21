@@ -16,15 +16,10 @@ const inputBtn = document.getElementById("input-btn")
 let ulEl = document.getElementById("ul-el")
 let deleteEl =  document.getElementById("delete-btn")
 
-const leadFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
 
 
 let truthy = Boolean(leadFromLocalStorage)
 
-if (truthy) {
-    myLeads = leadFromLocalStorage
-    renderInput(myLeads)
-}
 
 
 
@@ -35,13 +30,12 @@ inputBtn.addEventListener("click", function () {
     console.log(myLeads)
     inputEl.value = ""
 
-    localStorage.setItem("myLeads", JSON.stringify(myLeads))
 
     renderInput(myLeads)
 })
 
 deleteEl.addEventListener("dblclick", function () {
-    localStorage.clear()
+
     myLeads = []
     renderInput(myLeads)
 })
