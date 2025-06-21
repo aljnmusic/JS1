@@ -17,7 +17,7 @@ let ulEl = document.getElementById("ul-el")
 let deleteEl =  document.getElementById("delete-btn")
 
 const leadFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
-const tabBtn = document.getElementById("tab-btn")
+
 
 let truthy = Boolean(leadFromLocalStorage)
 
@@ -27,13 +27,7 @@ if (truthy) {
 }
 
 
-tabBtn.addEventListener("click", function(){
-    chrome.tabs.query({active:true, currentWindow: true}, function(tabs){
-        myLeads.push(tabs[0].url)
-        localStorage.setItem("myLeads", JSON.stringify(myLeads))
-        renderInput(myLeads)
-    })
-})
+
 
 inputBtn.addEventListener("click", function () {
     let elementEl = inputEl.value
