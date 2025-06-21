@@ -18,8 +18,6 @@ let deleteEl =  document.getElementById("delete-btn")
 
 
 
-let truthy = Boolean(leadFromLocalStorage)
-
 
 
 

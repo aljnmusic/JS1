@@ -6,5 +6,15 @@
   "action": {
     "default_popup": "index.html",
     "default_icon": "icon.png"
+  },
+  "host_permissions": [
+    "https://*.firebaseio.com/",
+    "https://*.firebaseio.com/*",
+    "https://*.gstatic.com/",
+    "https://*.gstatic.com/*",
+    "https://*.googleapis.com/"
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' https://www.gstatic.com; object-src 'self';"
   }
 }
