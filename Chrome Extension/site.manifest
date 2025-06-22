@@ -1,0 +1,16 @@
+{
+"name": "Galos Lead Tracker",
+"short_name": "Galos Lead Tracker",
+
+"icon": [
+        {
+            "src": "icon.png",
+            "type": "img/png"
+       }
+]
+
+"display": "standalone",
+"background-color": "#ffffff",
+"theme-color": "blue"
+
+}
