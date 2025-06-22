@@ -24,7 +24,8 @@ inputBtn.addEventListener("click", function () {
 })
 
 onValue(referenceInDB, function (snapshot){
-    console.log(snapshot.val())
+    const snapshotValue = snapshot.val()
+    const lead = Object.values(snapshotValue)
 })
 
 deleteEl.addEventListener("dblclick", function () {
