@@ -25,7 +25,7 @@ inputBtn.addEventListener("click", function () {
 })
 
 onValue(referenceInDB, function (snapshot){
-    const doesHaveSnapshot = snapshot.exist()
+    const doesHaveSnapshot = snapshot.exists()
 
     if(doesHaveSnapshot){
         const snapshotValue = snapshot.val()
@@ -36,7 +36,7 @@ onValue(referenceInDB, function (snapshot){
 
 deleteEl.addEventListener("dblclick", function () {
     remove(referenceInDB)
-    inputEl.value = ""
+    ulEl.innerHTML = ""
 })
 
 function renderInput(leads){
