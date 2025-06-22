@@ -1,5 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-app.js"
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js"
+import { getDatabase,
+         ref,
+         push,
+         onValue} from "https://www.gstatic.com/firebasejs/11.9.1/firebase-database.js"
 
 const firebaseConfig = {
     databaseURL: "https://lead-tracker-app-89a45-default-rtdb.asia-southeast1.firebasedatabase.app/"
@@ -20,9 +23,11 @@ inputBtn.addEventListener("click", function () {
     inputEl.value = ""
 })
 
+onValue(referenceInDB, function (snapshot){
+    console.log(snapshot.val())
+})
+
 deleteEl.addEventListener("dblclick", function () {
-
-
 
 })
 
