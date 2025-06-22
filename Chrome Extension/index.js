@@ -25,7 +25,7 @@ inputBtn.addEventListener("click", function () {
 
 onValue(referenceInDB, function (snapshot){
     const snapshotValue = snapshot.val()
-    const lead = Object.values(snapshotValue)
+    const leads = Object.values(snapshotValue)
     renderInput(leads)
 })
 
