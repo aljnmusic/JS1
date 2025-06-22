@@ -2,10 +2,10 @@
 "name": "Galos Lead Tracker",
 "short_name": "Galos Lead Tracker",
 
-"icon": [
+"icons": [
         {
             "src": "icon.png",
-            "type": "img/png"
+            "type": "image/png"
        }
 ]
 
