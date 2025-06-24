@@ -60,16 +60,29 @@ function renderGame(){
     }
 
     sumEl.textContent = s + sum
-    if(sum < 21){
-        message = "You're Not a Black Jack!"
-    }
-    else if(sum === 21){
-        message = "You are black jack!"
-        hasBlackJack = true
-    }
-    else{
-        message = "You are out of the game!"
-        isAlive = false
+    // if(sum < 21){
+    //     message = "You're Not a Black Jack!"
+    // }
+    // else if(sum === 21){
+    //     message = "You are black jack!"
+    //     hasBlackJack = true
+    // }
+    // else{
+    //     message = "You are out of the game!"
+    //     isAlive = false
+    // }
+
+    switch (true){
+        case sum < 21:
+            message = "You're Not a Black Jack!"
+            break
+        case sum === 21:
+            message = "You are black jack!"
+            hasBlackJack = true
+            break
+        default:
+            message = "You are out of the game!"
+            isAlive = false
     }
 
     messageEl.textContent = message
