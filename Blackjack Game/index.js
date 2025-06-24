@@ -18,14 +18,23 @@ playerEl.textContent = player.name + ": $" + player.chips
 function randomNumber(){
     let randNum = Math.floor(Math.random() * 13 + 1)
 
-    if(randNum === 1){
-        return 11
-    }
-    else if(randNum > 10){
-        return 10
-    }
-    else{
-        return randNum
+    // if(randNum === 1){
+    //     return 11
+    // }
+    // else if(randNum > 10){
+    //     return 10
+    // }
+    // else{
+    //     return randNum
+    // }
+
+    switch (true){
+        case randNum === 1:
+            return 11
+        case randNum > 10:
+            return 10
+        default:
+            return randNum
     }
 
 }
