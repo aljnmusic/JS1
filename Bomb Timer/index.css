@@ -36,6 +36,7 @@ input{
 button{
     font-family: monospace;
     padding: 1%;
+    margin: 1%;
 }
 
 .output{
