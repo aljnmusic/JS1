@@ -37,3 +37,7 @@ button{
     font-family: monospace;
     padding: 1%;
 }
+
+.output{
+    text-align:  center;
+}

@@ -1,19 +1,19 @@
-let timeEl = document.getElementsByClassName("time");
-let countBtn = document.getElementsByClassName("counter-el");
-let tickingEl = document.getElementsByClassName("ticking")
+let timeEl = document.getElementById("time");
+let countBtn = document.getElementById("counter-el");
+let tickingEl = document.getElementById("ticking")
 
 
 countBtn.addEventListener("click", function () {
-    let currentTime = timeEl.value
+    let currentTime = Number(timeEl.value)
 
-    const shutdownTime = setInterval(() => {
-        if (currentTime < 0) {
-            setInterval(function () {
-                tickingEl.innerHTML = `Bomb will explode in ${currentTime} seconds`;
-            }, 1000)
+    const shutdownTime = setInterval(function () {
+        if (currentTime > 0) {
+            tickingEl.textContent = `Bomb will explode in ${currentTime} seconds.`
+            currentTime--
         } else {
-            tickingEl.innerHTML = `Bomb has explode`
+            tickingEl.textContent = `Bomb has explode`
             clearInterval(shutdownTime)
         }
-    })
+    }, 1000)
+
 })
