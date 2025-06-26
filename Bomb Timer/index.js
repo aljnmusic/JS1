@@ -1,0 +1,1 @@
+let timeEl = document.getElementsByClassName("time");
