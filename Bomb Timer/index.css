@@ -7,3 +7,12 @@
 body{
     background-color:  darkred;
 }
+
+.timer{
+    text-align: center;
+    padding: 1%;
+    margin: 2%;
+    font-weight: bold;
+    font-family: monospace;
+    font-size:  x-large;
+}
