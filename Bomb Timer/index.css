@@ -41,4 +41,10 @@ button{
 
 .output{
     text-align:  center;
+    font-family: monospace;
+    font-size:  4.5em;
+}
+
+.red{
+    color: red;
 }
