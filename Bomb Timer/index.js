@@ -5,9 +5,14 @@ let tickingEl = document.getElementsByClassName("ticking")
 function startTimer() {
     let currentTime = timeEl.value
 
-    if (currentTime < 0) {
-        setInterval(function () {
-
-        })
-    }
+    const shutdownTime = setInterval(() => {
+        if (currentTime < 0) {
+            setInterval(function () {
+                tickingEl.innerHTML = `Bomb will explode in ${currentTime} seconds`;
+            }, 1000)
+        } else {
+            tickingEl.innerHTML = `Bomb has explode`
+            clearInterval(shutdownTime)
+        }
+    })
 }
