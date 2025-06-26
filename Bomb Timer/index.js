@@ -2,7 +2,8 @@ let timeEl = document.getElementsByClassName("time");
 let countBtn = document.getElementsByClassName("counter-el");
 let tickingEl = document.getElementsByClassName("ticking")
 
-function startTimer() {
+
+countBtn.addEventListener("click", function () {
     let currentTime = timeEl.value
 
     const shutdownTime = setInterval(() => {
@@ -15,4 +16,4 @@ function startTimer() {
             clearInterval(shutdownTime)
         }
     })
-}
+})
