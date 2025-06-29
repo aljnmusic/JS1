@@ -2,34 +2,32 @@ import {getStockData} from "./fakeStockAPI.js"
 
 setInterval(function (){
     const stockData = getStockData()
-    renderStockTicker(stockData)
-}, 3000)
+    renderStockData(stockData)
+}, 1500)
 
-let prevPrice = null
+let priorPrice = null
 
-function renderStockTicker(stockData) {
+function renderStockData(stockData) {
     const stockDisplayName = document.getElementById('name')
     const stockDisplaySymbol = document.getElementById('symbol')
     const stockDisplayPrice = document.getElementById('price')
     const stockDisplayPriceIcon = document.getElementById('price-icon')
     const stockDisplayTime = document.getElementById('time')
 
-    const {name, symbol, price, time} = stockData
+    const {name, sym, price, time} = stockData
 
-    const priorPrice = price > prevPrice ? 'green.svg' : price <  prevPrice ? 'red.svg' : 'grey.svg'
+    let priceDirection = price > priorPrice ? `green.svg` : price < priorPrice ? `red.svg` : `gray.svg`
 
     const priceIconElement = document.createElement('img')
-    priceIconElement.src = `svg/${priorPrice}`
-    priceIconElement.alt = 'Price Direction Icon'
-    priceIconElement.style.width = '15px'
-    priceIconElement.style.height = '15px'
+    priceIconElement.src = `svg/${priceDirection}`
+    priceIconElement.alt = "Price Direction Icon"
     stockDisplayPriceIcon.innerHTML = ''
     stockDisplayPriceIcon.appendChild(priceIconElement)
 
     stockDisplayName.innerText = name
-    stockDisplaySymbol.innerText = symbol
+    stockDisplaySymbol.innerText = sym
     stockDisplayPrice.innerText = price
     stockDisplayTime.innerText = time
 
-    prevPrice = price
+    priorPrice = price
 }
