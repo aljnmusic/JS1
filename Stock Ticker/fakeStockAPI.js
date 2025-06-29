@@ -1,4 +1,4 @@
-function getStockData(){
+export function getStockData(){
     return {
         name: 'QtechAI',
         sym: 'QTA',
