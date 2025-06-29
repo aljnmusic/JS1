@@ -73,9 +73,9 @@ function renderStockData2(stockData2){
     const stockDisplayHigh2 =  document.getElementById('high2')
     const stockDisplayLow2 = document.getElementById('low2')
     const stockDisplayVolume2 = document.getElementById('volume2')
-    const stockDisplayVolumeIcon = document.getElementById('volume-icon')
-    const stockDisplayMarketCap =  document.getElementById('marketCap')
-    const stockDisplayPerRatio = document.getElementById('peRatio')
+    const stockDisplayVolumeIcon2 = document.getElementById('volume-icon2')
+    const stockDisplayMarketCap2 =  document.getElementById('marketCap2')
+    const stockDisplayPerRatio2 = document.getElementById('peRatio2')
 
     const {name, sym, price, time} = stockData2
     let priceDirection2 = price > priorPrice2 ? 'green.svg' : price < priorPrice2 ? `red.svg` : `grey.svg`
