@@ -15,6 +15,9 @@ function renderStockTicker(stockData) {
     const {name, symbol, price, time} = stockData
 
     stockDisplayName.innerText = name
+    stockDisplaySymbol.innerText = symbol
+    stockDisplayPrice.innerText = price
+    stockDisplayTime.innerText = time
 
 }
 
