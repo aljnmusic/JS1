@@ -80,7 +80,7 @@ function renderStockData2(stockData2){
 
     const {name, sym, price, time, open, high, low, volume, marketCap, peRatio} = stockData2
     let priceDirection2 = price > priorPrice2 ? 'green.svg' : price < priorPrice2 ? `red.svg` : `grey.svg`
-    let volumeDirection2 = volume > priorVolume ? `green.svg` : volume < priorVolume ? `red.svg` : `grey.svg`
+    let volumeDirection2 = volume > priorVolume2 ? `green.svg` : volume < priorVolume2 ? `red.svg` : `grey.svg`
 
     const  priceIconElement2 = document.createElement('img')
     priceIconElement2.src = `svg/${priceDirection2}`
@@ -88,11 +88,13 @@ function renderStockData2(stockData2){
     stockDisplayPriceIcon2.innerHTML = ''
     stockDisplayPriceIcon2.appendChild(priceIconElement2)
 
-    const volumeIconElement = document.createElement('img')
-    volumeIconElement.src = `svg/${volumeDirection2}`
-    volumeIconElement.alt = "Volume Direction Icon"
-    stockDisplayVolume2.innerHTML = ''
+    const volumeIconElement2 = document.createElement('img')
+    volumeIconElement2.src = `svg/${volumeDirection2}`
+    volumeIconElement2.alt = "Volume Direction Icon"
+    stockDisplayVolumeIcon2.innerHTML = ''
     stockDisplayVolumeIcon2.appendChild(volumeIconElement2)
+
+
 
     stockDisplayName2.innerText = name
     stockDisplaySymbol2.innerText = sym
@@ -104,7 +106,6 @@ function renderStockData2(stockData2){
     stockDisplayVolume2.innerText = volume
     stockDisplayMarketCap2.innerText = marketCap
     stockDisplayPerRatio2.innerText = peRatio
-
 
 
     priorPrice2 = price
