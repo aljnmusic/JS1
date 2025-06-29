@@ -7,6 +7,7 @@ setInterval(function (){
 }, 1500)
 
 let priorPrice = null
+let priorVolume = null
 
 function renderStockData(stockData) {
     const stockDisplayName = document.getElementById('name')
@@ -14,10 +15,18 @@ function renderStockData(stockData) {
     const stockDisplayPrice = document.getElementById('price')
     const stockDisplayPriceIcon = document.getElementById('price-icon')
     const stockDisplayTime = document.getElementById('time')
+    const stockDisplayOpen = document.getElementById('open')
+    const stockDisplayHigh =  document.getElementById('high')
+    const stockDisplayLow = document.getElementById('low')
+    const stockDisplayVolume = document.getElementById('volume')
+    const stockDisplayVolumeIcon = document.getElementById('volume-icon')
+    const stockDisplayMarketCap =  document.getElementById('marketCap')
+    const stockDisplayPerRatio = document.getElementById('peRatio')
 
-    const {name, sym, price, time} = stockData
+    const {name, sym, price, time, open, high, low, volume, marketCap, peRatio} = stockData
 
     let priceDirection = price > priorPrice ? `green.svg` : price < priorPrice ? `red.svg` : `grey.svg`
+    let volumeDirection = volume > priorVolume ? `green.svg` : volume < priorVolume ? `red.svg` : `grey.svg`
 
     const priceIconElement = document.createElement('img')
     priceIconElement.src = `svg/${priceDirection}`
@@ -25,12 +34,25 @@ function renderStockData(stockData) {
     stockDisplayPriceIcon.innerHTML = ''
     stockDisplayPriceIcon.appendChild(priceIconElement)
 
+    const volumeIconElement =  document.createElement('img')
+    volumeIconElement.src = `svg/${volumeDirection}`
+    volumeIconElement.alt = "Volume Direction Icon"
+    stockDisplayVolumeIcon.innerHTML = ''
+    stockDisplayVolumeIcon.appendChild(volumeIconElement)
+
     stockDisplayName.innerText = name
     stockDisplaySymbol.innerText = sym
     stockDisplayPrice.innerText = price
     stockDisplayTime.innerText = time
+    stockDisplayOpen.innerText = open
+    stockDisplayHigh.innerText = high
+    stockDisplayLow.innerText = low
+    stockDisplayVolume.innerText = volume
+    stockDisplayMarketCap.innerText = marketCap
+    stockDisplayPerRatio.innerText = peRatio
 
     priorPrice = price
+    priorVolume = volume
 }
 
 //ggh
