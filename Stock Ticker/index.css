@@ -3,6 +3,10 @@ html, body {
     padding: 0;
     background-color: #282828;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
 
 .stock-display-container {
@@ -19,4 +23,16 @@ html, body {
 img {
     max-width: 15px;
     margin-left: 5px;
+}
+
+.stock2-display-container {
+    width: 200px;
+    margin: 2em auto;
+    padding: 1em;
+    margin-left: 1em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+    background-color: lightgray;
 }
