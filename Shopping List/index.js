@@ -10,6 +10,8 @@ addItemBtn.addEventListener('click', function(){
         shoppingList.push(itemInput.value)
         render()
         itemInput.value = ''
+    } else {
+
     }
 })
 
