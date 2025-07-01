@@ -6,17 +6,19 @@ const shoppingList = []
 
 addItemBtn.addEventListener('click', function(){
 
-    shoppingList.push(itemInput.value)
-    render()
-    itemInput.value = ''
+    // shoppingList.push(itemInput.value)
+    // render()
+    // itemInput.value = ''
 
     if(shoppingList.includes(itemInput.value)){
-        listEl.textContent = "No duplicates"
+        listEl.textContent = `${itemInput.value} is already added`
     }
     else{
         shoppingList.push(itemInput.value)
-        itemInput.value = ''
+        render()
     }
+
+    itemInput.value = ''
 })
 
 function render(){
@@ -27,4 +29,4 @@ function render(){
     list.innerHTML = html
 }
 
-render()
+// render()
