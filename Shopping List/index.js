@@ -11,7 +11,7 @@ addItemBtn.addEventListener('click', function(){
         render()
         itemInput.value = ''
     } else {
-
+        listEl.textContent = "No Duplicates"
     }
 })
 
