@@ -6,12 +6,16 @@ const shoppingList = []
 
 addItemBtn.addEventListener('click', function(){
 
-    if(shoppingList.includes(shoppingList[])){
+    shoppingList.push(itemInput.value)
+    render()
+    itemInput.value = ''
+
+    if(shoppingList.includes(itemInput.value)){
+        listEl.textContent = "No duplicates"
+    }
+    else{
         shoppingList.push(itemInput.value)
-        render()
         itemInput.value = ''
-    } else {
-        listEl.textContent = "No Duplicates"
     }
 })
 
