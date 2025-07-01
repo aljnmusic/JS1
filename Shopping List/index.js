@@ -5,9 +5,12 @@ let addItemBtn = document.getElementById('add-item-btn');
 const shoppingList = []
 
 addItemBtn.addEventListener('click', function(){
-    shoppingList.push(itemInput.value)
-    render()
-    itemInput.value = ''
+
+    if(shoppingList.includes(shoppingList[])){
+        shoppingList.push(itemInput.value)
+        render()
+        itemInput.value = ''
+    }
 })
 
 function render(){
