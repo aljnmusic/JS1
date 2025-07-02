@@ -1,12 +1,12 @@
-import { playlistArr } from '/playlist.js'
+import { playlistArr } from './playlist.js'
 
 // const playlistList = []
 
-const list = playlistArr.map(function(track)){
+const list = playlistArr.map(function ( track ) {
     return `
         <section class="card">
             <div class="card-start">
-                <img src="/images/${track.albumArt}"
+                <img alt="image" src="./images/${track.albumArt}">
             </div>
             </div class="card-mid">
                 <h4 class="card-title">${track.title}</h4>
@@ -18,6 +18,6 @@ const list = playlistArr.map(function(track)){
         
         </section>
     `
-}
+})
 
-document.getElementById('container').innerText = list
+document.getElementById('container').innerHTML = list.join('')
