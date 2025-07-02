@@ -29,9 +29,18 @@ resetBtn.addEventListener('click', function(){
 function render(){
     let html = ''
     for (let item of shoppingList) {
-        html += `<li class="list-item">${item}</li>`
+        html += `<li class="list-item">${item}</li><button id="x">X</button>`
     }
     list.innerHTML = html
 }
 
+let remove = document.getElementById('x')
+
+remove.addEventListener('click', function(){
+    for(let list in shoppingList){
+        if(shoppingList[list].includes(itemInput.value)){
+            list.remove[shoppingList]()
+        }
+    }
+})
 // render()
