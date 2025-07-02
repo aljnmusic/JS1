@@ -47,22 +47,15 @@ body {
     box-shadow: 0 0px 15px rgba(255, 255, 255, .8);
 }
 
-h4.card-title {
+h4 .card-title {
     font-size: 17px;
-    margin: 0 0 3px 0;
-
-}
-
-.card-title, .card-artist{
-    display: block;
     margin: 0;
-    padding: 0;
 }
+
 
 .card-artist {
     font-size: 13px;
     margin: 0;
-
 }
 
 .card-menu {

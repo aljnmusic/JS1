@@ -18,6 +18,6 @@ const list = playlistArr.map(function ( track ) {
         
         </section>
     `
-})
+}).join('')
 
-document.getElementById('container').innerHTML = list.join('')
+document.getElementById('container').innerHTML = list
