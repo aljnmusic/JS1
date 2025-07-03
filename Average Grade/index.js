@@ -52,14 +52,10 @@ function renderGrade(){
 
     let gwa = totalWeightScore / totalUnits
 
-    switch(gwa){
-        case 'gwa > 90':
-            return 1.0
-    }
 
     html += `
         <br>Total Weighted Score: ${totalWeightScore} <br>
-        Average Grade: ${(averageGrade / studentGrade.length).toFixed(2)}% <br>
+        Average Grade: ${(totalWeightScore / studentGrade.length).toFixed(2)}% <br>
         GWA: ${gwa.toFixed(2)}%
     `
 
