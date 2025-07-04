@@ -1,22 +1,25 @@
-import {contactsArr} from './contactsData.js'
+import { contactsArr } from './contactsData.js'
+
 
 const patternSearchInput = document.getElementById('pattern-search-input')
 const patternSearchSubmit = document.getElementById('pattern-search-submit')
 const contactDisplay = document.getElementById('contact-display')
 
 patternSearchSubmit.addEventListener('click', function(){
-    findMatchingContacts(contactsArr, patternSearchInput.value)
+    findMatchPattern(contactsArr, patternSearchInput.value)
 })
 
-function findMatchingContacts(contactsArr, pattern) {
+function findMatchPattern(contactsArr, pattern) {
     contactDisplay.innerHTML = ''
     const regex = new RegExp(pattern, 'i')
     contactsArr.filter(function(contact){
         return regex.test(contact.name)
     }).forEach(function(contact){
-            renderContact(contact)
-        })
+        renderContact(contact)
+    })
 }
+
+
 
 function renderContact(contactObj) {
     const {name, email, phone} =  contactObj
