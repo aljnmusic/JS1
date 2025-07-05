@@ -5,24 +5,22 @@ const patternSearchInput = document.getElementById('pattern-search-input')
 const patternSearchSubmit = document.getElementById('pattern-search-submit')
 const contactDisplay = document.getElementById('contact-display')
 
-patternSearchSubmit.addEventListener('click', function(){
+patternSearchSubmit.addEventListener('click', () => {
     findMatchPattern(contactsArr, patternSearchInput.value)
 })
 
-function findMatchPattern(contactsArr, pattern) {
+
+const findMatchPattern = (contactsArr, pattern) => {
     contactDisplay.innerHTML = ''
     const regex = new RegExp(pattern, 'i')
-    contactsArr.filter(function(contact){
-        return regex.test(contact.name)
-    }).forEach(function(contact){
-        renderContact(contact)
-    })
+
+    const filteredContacts = contactsArr.filter(contact => regex.test(contact.name))
+    filteredContacts.forEach(contact => {renderContact(contact)})
 }
 
 
 
-function renderContact(contactObj) {
-    const {name, email, phone} =  contactObj
+const renderContact = ({name, email, phone}) => {
     const contactCard = document.createElement('aside')
     contactCard.classList.add('contact-card')
 
