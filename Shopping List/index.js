@@ -5,7 +5,7 @@ let resetBtn = document.getElementById('reset-item-btn')
 
 const shoppingList = []
 
-addItemBtn.addEventListener('click', function(){
+addItemBtn.addEventListener('click', () => {
 
     // shoppingList.push(itemInput.value)
     // render()
@@ -22,16 +22,16 @@ addItemBtn.addEventListener('click', function(){
     itemInput.value = ''
 })
 
-resetBtn.addEventListener('click', function(){
-    list.innerHTML = ''
+resetBtn.addEventListener('click', () => {
+    listEl.innerHTML = ''
 })
 
-function render(){
+const render = () => {
     let html = ''
     for (let item of shoppingList) {
         html += `<li class="list-item">${item}</li><button id="x">X</button>`
     }
-    list.innerHTML = html
+    listEl.innerHTML = html
 }
 
 let remove = document.getElementById('x')
