@@ -5,7 +5,7 @@ let averageResult = document.getElementById('result')
 
 const studentGrade = []
 const studentUnits = []
-submitBtn.addEventListener('click', function(){
+submitBtn.addEventListener('click', () => {
     let student = gradeInput.value
     let studentUni = units.value
 
@@ -31,10 +31,10 @@ submitBtn.addEventListener('click', function(){
 //     return 5.0  // Below 50% is 5.0 (Failing)
 // }
 
-function renderGrade(){
+const renderGrade = () => {
     let html = ''
 
-    studentGrade.forEach(function(grade, index){
+    studentGrade.forEach((grade, index) => {
         html += `
                     <li>${grade}, ${studentUnits[index]} units</li>
                  `
@@ -44,7 +44,7 @@ function renderGrade(){
     let totalUnits = 0
     let averageGrade = 0
 
-    studentGrade.forEach(function(grade, index){
+    studentGrade.forEach((grade, index) => {
         averageGrade += grade
         totalWeightScore += grade * studentUnits[index]
         totalUnits += studentUnits[index]
