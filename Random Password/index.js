@@ -1,7 +1,8 @@
 const char = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+[]{}<>?"
 let newEl = document.getElementById("new-el")
 let passLength = 15
-function randomPassword(){
+
+const randomPassword = () => {
     let password = ""
     if (passLength){
         for(let i = 0; i < char.length; i++){
