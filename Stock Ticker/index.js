@@ -1,7 +1,7 @@
 import {getStockData} from "./fakeStockAPI.js"
 import {getStockData2} from "./fakeStockAPI.js"
 
-setInterval(function (){
+setInterval(() => {
     const stockData = getStockData()
     renderStockData(stockData)
 }, 1500)
@@ -9,7 +9,7 @@ setInterval(function (){
 let priorPrice = null
 let priorVolume = null
 
-function renderStockData(stockData) {
+const renderStockData = (stockData) => {
     const stockDisplayName = document.getElementById('name')
     const stockDisplaySymbol = document.getElementById('symbol')
     const stockDisplayPrice = document.getElementById('price')
@@ -56,7 +56,7 @@ function renderStockData(stockData) {
 }
 
 //ggh
-setInterval(function (){
+setInterval(() => {
     const stockData2 = getStockData2()
     renderStockData2(stockData2)
 }, 1500)
@@ -64,7 +64,7 @@ setInterval(function (){
 let priorPrice2 = null
 let priorVolume2 = null
 
-function renderStockData2(stockData2){
+const renderStockData2 = (stockData2) => {
     const stockDisplayName2 = document.getElementById('name2')
     const stockDisplaySymbol2 = document.getElementById('symbol2')
     const stockDisplayPrice2 = document.getElementById('price2')
