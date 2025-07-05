@@ -11,7 +11,7 @@ const gallonToLitter = 3.78541
 const phpToUsdRate = 0.0179
 const usdToPhpRate = 55.84
 
-convertBtn.addEventListener("click", function(){
+convertBtn.addEventListener("click", () => {
     let baseValue = parseFloat(inputEl.value)
 
     if (isNaN(baseValue)) {
