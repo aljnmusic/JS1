@@ -2,7 +2,7 @@ import { playlistArr } from './playlist.js'
 
 const playlistList = []
 
-playlistArr.forEach(function(track){
+playlistArr.forEach((track) => {
     playlistList.push( `
         <section class="card">
             <div class="card-start">
