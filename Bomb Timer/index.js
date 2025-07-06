@@ -5,11 +5,11 @@ let resetBtn =  document.getElementById("reset")
 const bombtType = document.getElementById("bombType")
 
 
-countBtn.addEventListener("click", function () {
+countBtn.addEventListener("click", () => {
     let currentTime = Number(timeEl.value)
     const typeOfBomb = bombtType.value
 
-    const shutdownTime = setInterval(function () {
+    const shutdownTime = setInterval( () => {
         if (currentTime > 0) {
             tickingEl.innerHTML = `${typeOfBomb} will explode in <span class="red">${currentTime}</span> seconds.`
             currentTime--
@@ -21,7 +21,7 @@ countBtn.addEventListener("click", function () {
 
 })
 
-resetBtn.addEventListener("click", function () {
+resetBtn.addEventListener("click", () => {
     timeEl.value = ""
     tickingEl.textContent = ""
 })
