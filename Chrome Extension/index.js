@@ -19,12 +19,12 @@ let ulEl = document.getElementById("ul-el")
 let deleteEl =  document.getElementById("delete-btn")
 
 
-inputBtn.addEventListener("click", function () {
+inputBtn.addEventListener("click", () => {
     push(referenceInDB, inputEl.value)
     inputEl.value = ""
 })
 
-onValue(referenceInDB, function (snapshot){
+onValue(referenceInDB, (snapshot) => {
     const doesHaveSnapshot = snapshot.exists()
 
     if(doesHaveSnapshot){
@@ -34,7 +34,7 @@ onValue(referenceInDB, function (snapshot){
     }
 })
 
-deleteEl.addEventListener("dblclick", function () {
+deleteEl.addEventListener("dblclick", () => {
     remove(referenceInDB)
     ulEl.innerHTML = ""
 })
