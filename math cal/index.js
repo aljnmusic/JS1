@@ -3,22 +3,22 @@ let n2 = document.getElementById("num2")
 let total =  document.getElementById("total-el")
 
 
-function add(){
+const add = () => {
     let sum = Number(n1.value) + Number(n2.value)
     total.innerText = "SUM: " + sum
 }
 
-function subtract(){
+const subtract = () => {
     let sum = Number(n1.value) - Number(n2.value)
     total.innerText = "Difference: " + sum
 }
 
-function multiply(){
+const multiply = () => {
     let sum = Number(n1.value) * Number(n2.value)
     total.innerText = "Product: " + sum
 }
 
-function divide(){
+const divide = () =>{
     let sum = Number(n1.value) / Number(n2.value)
     total.innerText = "Quotient: " + sum.toFixed(2)
 }
