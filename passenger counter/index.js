@@ -22,18 +22,18 @@ let saveEl = document.getElementById("save-el")
 
 let count = 0
 
-function increment(){
+const increment = () => {
     count = count + 1
     //document.getElementById("counter-el").innerHTML = count
     countEL.innerText = count
 }
 
-function decrement(){
+const decrement = () => {
     count = count - 1
     document.getElementById("counter-el").innerHTML = count
 }
 
-function save(){
+const save = () => {
     let counter = count
     let dash = " - "
     let countDash = counter + dash
