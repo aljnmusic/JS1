@@ -15,7 +15,7 @@ let player = {
 let playerEl = document.getElementById("player-el")
 playerEl.textContent = player.name + ": $" + player.chips
 
-function randomNumber(){
+const randomNumber = () => {
     let randNum = Math.floor(Math.random() * 13 + 1)
 
     // if(randNum === 1){
@@ -39,7 +39,7 @@ function randomNumber(){
 
 }
 
-function startGame(){
+const startGame = () => {
     isAlive = true
     hasBlackJack = false
 
@@ -51,7 +51,7 @@ function startGame(){
 
     renderGame()
 }
-function renderGame(){
+const renderGame = () => {
     let s = "Sum: "
     cardsEl.textContent = "Cards: "
 
@@ -88,7 +88,7 @@ function renderGame(){
     messageEl.textContent = message
 }
 
-function newCard(){
+const newCard = () => {
     if (isAlive && !hasBlackJack){
         let newCard = randomNumber()
         sum += newCard
