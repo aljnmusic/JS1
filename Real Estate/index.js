@@ -1,7 +1,7 @@
 import { propertyForSaleArr } from './properties/propertyForSaleArr.js'
 import { placeholderPropertyObj } from './properties/placeholderPropertyObj.js'
 
-function getPropertyHtml(properties = propertyForSaleArr.length > 0 ? propertyForSaleArr : [placeholderPropertyObj]) {
+function getPropertyHtml(properties = [placeholderPropertyObj]) {
 
     return properties.map(({propertyLocation, priceGBP, roomsM2, comment, image}) => {
 
@@ -23,4 +23,4 @@ function getPropertyHtml(properties = propertyForSaleArr.length > 0 ? propertyFo
 }
 
 
-document.getElementById('container').innerHTML = getPropertyHtml(propertyForSaleArr)
+document.getElementById('container').innerHTML = getPropertyHtml()
