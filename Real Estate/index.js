@@ -22,13 +22,13 @@ function getPropertyHtml() {
         return `<section class="card">
             <img src="/images/IMAGE">
                 <div class="card-right">
-                    <h2>${propertyLocation.reduce()}</h2>
-                    <h3>${priceGBP}</h3>
+                    <h2>${propertyLocation}</h2>
+                    <h3>${priceGBP.reduce()}</h3>
                     <p>${comment}</p>
                     <h3>TOTAL SIZE IN SQUARE METRES m&sup2;</h3>
                 </div>
         </section>`
-    })
+    }).join('')
 /*
 SUPER CHALLENGE 💪
 
