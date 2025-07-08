@@ -1,26 +1,9 @@
 import { placeholderPropertyObj } from './properties/placeholderPropertyObj'
 import { propertyForSaleArr } from './properties/propertyForSaleArr'
 
-function getPropertyHtml() {
+function getPropertyHtml(properties = propertyForSaleArr.length > 0 ? propertyForSaleArr : [placeholderPropertyObj]) {
 
-    // const {propertyLocation, priceGBP, roomsM2, comment, image} = propertyForSaleArr
-
-    // const locationEl = document.createElement('p')
-    // const priceGBPEl = document.createElement('p')
-    // const roomsM2El = document.createElement('p')
-    // const commentEl = document.createElement('p')
-    // const imageEl = document.createElement('img')
-    //
-    // locationEl.innerText = propertyLocation
-    // priceGBPEl.innerText = priceGBP
-    // roomsM2El.innerText = roomsM2
-    // commentEl.innerText = comment
-    // imageEl
-    // imageEl.src = `images/${image}`
-
-
-
-    const realEstate = propertyForSaleArr.map(({propertyLocation, priceGBP, roomsM2, comment, image}) => {
+    const realEstate = properties.map(({propertyLocation, priceGBP, roomsM2, comment, image}) => {
         const totalSize = roomsM2.reduce((a, b) => a + b, 0)
 
         let html = ''
@@ -70,4 +53,4 @@ This is the HTML template 👇. Replace everything in UPPERCASE with property da
 }
 
 /***** Modify 👇 by adding an argument to the function call ONLY. *****/
-document.getElementById('container').innerHTML = getPropertyHtml(placeholderPropertyObj)
+document.getElementById('container').innerHTML = getPropertyHtml(propertyForSaleArr)
