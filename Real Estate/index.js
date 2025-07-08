@@ -1,13 +1,13 @@
-import {placeholderPropertyObj} from './properties/placeholderPropertyObj'
-import {propertyForSaleArr} from './properties/propertyForSaleArr'
+import {placeholderPropertyObj} from './properties/placeholderPropertyObj.js'
+import {propertyForSaleArr} from './properties/propertyForSaleArr.js'
 
 function getPropertyHtml(properties = propertyForSaleArr.length > 0 ? propertyForSaleArr : [placeholderPropertyObj]) {
 
-    let html = ''
-    return properties.map(({propertyLocation, priceGBP, roomsM2, comment, image}) => {
+    // let html = ''
+    const real = properties.map(({propertyLocation, priceGBP, roomsM2, comment, image}) => {
         const totalSize = roomsM2.reduce((a, b) => a + b, 0)
 
-        html += `<section class="card">
+        return `<section class="card">
                     <img src="./images/${image}" alt="property image">
                         <div class="card-right">
                             <h2>${propertyLocation}</h2>
@@ -17,8 +17,10 @@ function getPropertyHtml(properties = propertyForSaleArr.length > 0 ? propertyFo
                         </div>
                   </section>`
 
-        return html
     }).join('')
+
+    return real
+
 /*
 SUPER CHALLENGE 💪
 
