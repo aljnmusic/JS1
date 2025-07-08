@@ -1,4 +1,34 @@
+import { placeholderPropertyObj } from './properties/placeholderPropertyObj'
+import { propertyForSaleArr } from './properties/propertyForSaleArr'
+
 function getPropertyHtml() {
+
+    const {propertyLocation, priceGBP, roomsM2, comment, image} = placeholderPropertyObj
+
+    // const locationEl = document.createElement('p')
+    // const priceGBPEl = document.createElement('p')
+    // const roomsM2El = document.createElement('p')
+    // const commentEl = document.createElement('p')
+    // const imageEl = document.createElement('img')
+    //
+    // locationEl.innerText = propertyLocation
+    // priceGBPEl.innerText = priceGBP
+    // roomsM2El.innerText = roomsM2
+    // commentEl.innerText = comment
+    // imageEl
+    // imageEl.src = `images/${image}`
+
+    placeholderPropertyObj.map((placeholderPropertyObj) => {
+        return `<section class="card">
+            <img src="/images/IMAGE">
+                <div class="card-right">
+                    <h2>${propertyLocation.reduce()}</h2>
+                    <h3>${priceGBP}</h3>
+                    <p>${comment}</p>
+                    <h3>TOTAL SIZE IN SQUARE METRES m&sup2;</h3>
+                </div>
+        </section>`
+    })
 /*
 SUPER CHALLENGE 💪
 
@@ -30,4 +60,4 @@ This is the HTML template 👇. Replace everything in UPPERCASE with property da
 }
 
 /***** Modify 👇 by adding an argument to the function call ONLY. *****/
-document.getElementById('container').innerHTML = getPropertyHtml()
+document.getElementById('container').innerHTML = getPropertyHtml(placeholderPropertyObj)
