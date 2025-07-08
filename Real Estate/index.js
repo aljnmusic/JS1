@@ -3,7 +3,7 @@ import { propertyForSaleArr } from './properties/propertyForSaleArr'
 
 function getPropertyHtml() {
 
-    const {propertyLocation, priceGBP, roomsM2, comment, image} = placeholderPropertyObj
+    // const {propertyLocation, priceGBP, roomsM2, comment, image} = propertyForSaleArr
 
     // const locationEl = document.createElement('p')
     // const priceGBPEl = document.createElement('p')
@@ -18,17 +18,27 @@ function getPropertyHtml() {
     // imageEl
     // imageEl.src = `images/${image}`
 
-    placeholderPropertyObj.map((placeholderPropertyObj) => {
-        return `<section class="card">
-            <img src="/images/IMAGE">
-                <div class="card-right">
-                    <h2>${propertyLocation}</h2>
-                    <h3>${priceGBP.reduce()}</h3>
-                    <p>${comment}</p>
-                    <h3>TOTAL SIZE IN SQUARE METRES m&sup2;</h3>
-                </div>
-        </section>`
+
+
+    const realEstate = propertyForSaleArr.map(({propertyLocation, priceGBP, roomsM2, comment, image}) => {
+        const totalSize = roomsM2.reduce((a, b) => a + b, 0)
+
+        let html = ''
+
+        html += `<section class="card">
+                    <img src="./images/${image}" alt="property image">
+                        <div class="card-right">
+                            <h2>${propertyLocation}</h2>
+                            <h3>${priceGBP}</h3>
+                            <p>${comment}</p>
+                            <h3>${totalSize} sqm;</h3>
+                        </div>
+                  </section>`
+
+        return html
     }).join('')
+
+    return realEstate
 /*
 SUPER CHALLENGE 💪
 
@@ -44,7 +54,7 @@ This is the JS I want you to use to complete this challenge 👇
 - .reduce()
 - Default parameters
 
-The HTML and CSS have been done for you. 
+The HTML and CSS have been done for you.
 This is the HTML template 👇. Replace everything in UPPERCASE with property data.
 
 <section class="card">
@@ -55,7 +65,7 @@ This is the HTML template 👇. Replace everything in UPPERCASE with property da
         <p>COMMENT</p>
         <h3>TOTAL SIZE IN SQUARE METRES m&sup2;</h3>
     </div>
-</section> 
+</section>
 */
 }
 
