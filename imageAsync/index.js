@@ -21,9 +21,9 @@ async function preloadImages(imageUrlsArr) {
     const uploadContainer = document.getElementById('upload-container')
 
     try{
-        const image1 = getImagePromise()
-        const image2 = getImagePromise()
-        const image3 = getImagePromise()
+        const image1 = getImagePromise(imageUrlsArr)
+        const image2 = getImagePromise(imageUrlsArr)
+        const image3 = getImagePromise(imageUrlsArr)
         const results = await Promise.all([image1, image2, image3])
         console.log('ALl images loaded successfully!')
         uploadContainer.style.display = 'none'
