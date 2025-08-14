@@ -1,8 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-storage.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-// 🔧 Replace with your actual Firebase config:
+// Your Firebase config
 const firebaseConfig = {
     apiKey: "AIzaSyA-WrZ6hS35vXo4OwgmgzxmpJQuf1QKJdo",
     authDomain: "notescloud-d8d47.firebaseapp.com",
@@ -12,9 +11,13 @@ const firebaseConfig = {
     appId: "1:852197125275:web:8b32da22fe46b2406d2a3e"
 };
 
+// Initialize Firebase app and Firestore
 const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
 const db = getFirestore(app);
+
+// Cloudinary info
+const cloudName = "drrtevw5u";
+const uploadPreset = "notescloud_unsigned";
 
 
 let formEl = document.getElementById('form')
