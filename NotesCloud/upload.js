@@ -1,0 +1,5 @@
+let formEl = document.getElementById('form')
+let courseCodeInput =  document.getElementById('course-code-input')
+let topicTitleInput = document.getElementById('topic-title-input')
+let userFile = document.getElementById('user-file')
+let uploadFile = document.getElementById('upload-file')
