@@ -2,13 +2,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebas
 import { getDatabase } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-database.js"
 
 const firebaseConfig = {
-    databaseUrl: "https://notescloud-d8d47-default-rtdb.asia-southeast1.firebasedatabase.app/"
+    databaseURL: "https://notescloud-d8d47-default-rtdb.asia-southeast1.firebasedatabase.app/"
 }
 
 const app = initializeApp(firebaseConfig)
 const database =  getDatabase(app)
 
-console.log(app)
+console.log(database)
 
 let formEl = document.getElementById('form')
 let courseCodeInput =  document.getElementById('course-code-input')
