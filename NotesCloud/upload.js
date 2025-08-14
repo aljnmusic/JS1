@@ -24,4 +24,47 @@ let formEl = document.getElementById('form')
 let courseCodeInput =  document.getElementById('course-code-input')
 let topicTitleInput = document.getElementById('topic-title-input')
 let userFile = document.getElementById('user-file')
-let uploadFile = document.getElementById('upload-file')
+let submitBtn = document.getElementById('submit-button')
+let notifEl = document.getElementById('notif')
+
+formEl.addEventListener('submit', async (event) => {
+    event.preventDefault()
+
+    const file = userFile.files[0]
+    if(!file){
+        notifEl.textContent = "Upload failed!"
+        return
+    }
+
+    const formData = new FormData()
+    formData.append('file', file)
+    formData.append('upload_preset', uploadPreset)
+
+    try{
+        const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`,{
+            method: "POST",
+            body: formData
+        })
+
+        if(!response.ok){
+            throw new Error(`Failed to upload to Cloudinary`)
+        }
+
+        const data = await response.json()
+        const fileURL = data.secure_url
+
+        await addDoc(collection(db, 'notes'),{
+            courseCode: courseCodeInput.value,
+            topicTitle: topicTitleInput.value,
+            fileURL: fileURL,
+            createdAt: serverTimestamp()
+        })
+
+        notifEl.textContent = "File Uploaded Successfully!"
+
+        formEl.reset()
+    } catch (error) {
+        console.log(error)
+        notifEl.textContent = "Failed to upload!"
+    }
+})
