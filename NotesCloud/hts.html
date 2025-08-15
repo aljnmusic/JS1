@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <title>Document</title>
 </head>
-<body class="flex flex-col min-h-screen w-full" style="background-image: url(images/home.png); background-size: cover; background-position: right; background-repeat: no-repeat">
+<body class="flex flex-col min-h-screen w-full" style="background-image: url(images/home.png); background-size: cover; background-position: right; background-repeat: no-repeat;">
 
 
 <nav class="bg-white border-gray-200 border rounded dark:bg-gray-900">
@@ -25,24 +25,45 @@
 </nav>
 
 
-<div id="home" class="flex-grow flex justify-center items-center relative">
-    <div class="w-full p-2 m-2 text-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">View and Upload Class Notes from anywhere!</h5>
-        <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">We know how tough it can be to find the right notes for a specific course—whether you're reviewing for exams, checking something you missed in class, or just need to share notes with a classmate. Our section has a unique vibe, and we want to make it easier for all of us to stay on top of things. With this platform, you can easily access, review, and share notes anytime, ensuring we're all on the same page and supporting each other in ways that fit the 2B culture. Let’s make studying together more efficient and less stressful!</p>
+<div id="home" class="flex flex-grow justify-center align-center flex-col sm:flex-row w-full px-2 py-1 lg:px-16 lg:py-12">
+    <div class="w-auto p-1 m-1 text-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-2 dark:bg-gray-800 dark:border-gray-700">
+        <div class="flex justify-center align-center">
+            <img src="images/question.png" class="w-1/2">
+        </div>
+        <h5 class="mb-2 text-3xl font-bold text-gray-900 dark:text-white">How NotesCloud Works</h5>
+<!--        <p class="mb-5 text-base text-gray-500 sm:text-lg dark:text-gray-400">Allow students to upload their class notes, assignments, and study materials quickly and easily. Upload your notes, assignments, and study resources with a few clicks. Share your knowledge with others and contribute to the learning community.</p>-->
+
+        <div class=" text-left">
+            <h3 class="text-2xl font-semibold mb-1 text-center">Step 1: Log In</h3>
+            <p class="mb-2 text-center italic">Login with the credentials provided by John. Once logged in, you can upload and download notes.</p>
+
+            <h3 class="text-2xl font-semibold mb-1 text-center">Step 2: Upload your notes.</h3>
+            <p class="mb-2 text-center italic">Click the "Upload" button, select your file, and fill in the details to make your notes easy to find.</p>
+
+            <h3 class="text-2xl font-semibold mb-1 text-center">Step 3: Search for Notes</h3>
+            <p class="mb-2 text-center italic">Use the search bar and filters to find the notes you need by subject, course, or title.</p>
+
+            <h3 class="text-2xl font-semibold mb-1 text-center">Step 4: Download Notes</h3>
+            <p class="mb-2 text-center italic">Click the download button to get the notes in PDF, Word, or other formats.</p>
+
+        </div>
     </div>
 </div>
 
 
-<div class="w-full h-16 bg-white border border-gray-200 rounded left-1/2 dark:bg-gray-700 dark:border-gray-600">
-    <div class="grid h-full md:w-full grid-cols-5 mx-auto w-full">
-        <a href="features.html" data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group"><svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-            <path stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M12.1429 11v9m0-9c-2.50543-.7107-3.19099-1.39543-6.13657-1.34968-.48057.00746-.86348.38718-.86348.84968v7.2884c0 .4824.41455.8682.91584.8617 2.77491-.0362 3.45995.6561 6.08421 1.3499m0-9c2.5053-.7107 3.1067-1.39542 6.0523-1.34968.4806.00746.9477.38718.9477.84968v7.2884c0 .4824-.4988.8682-1 .8617-2.775-.0362-3.3758.6561-6 1.3499m2-14c0 1.10457-.8955 2-2 2-1.1046 0-2-.89543-2-2s.8954-2 2-2c1.1045 0 2 .89543 2 2Z"/>
-        </svg>
 
-            <span class="sr-only">Features</span>
+<div class="z-50 w-full h-16 bg-white border border-gray-200 rounded left-1/2 dark:bg-gray-700 dark:border-gray-600">
+    <div class="grid h-full md:w-full grid-cols-5 mx-auto w-full">
+        <a href="home.html" data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
+
+            <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
+            </svg>
+
+            <span class="sr-only">Home</span>
         </a>
         <div id="tooltip-home" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
-            Features
+            Home
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
         <button data-tooltip-target="tooltip-wallet" type="button" class="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group">
@@ -86,7 +107,7 @@
             <span class="sr-only">Contact</span>
         </button>
         <div id="tooltip-profile" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-xs opacity-0 tooltip dark:bg-gray-700">
-            Contact
+            Contact Galos
             <div class="tooltip-arrow" data-popper-arrow></div>
         </div>
     </div>
