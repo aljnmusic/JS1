@@ -1,0 +1,5 @@
+let formEl = document.getElementById('form')
+let nameInputEl = document.getElementById('name-input')
+let emailInputEl = document.getElementById('email-input')
+let messageInputEl = document.getElementById('message')
+let submitBtn = document.getElementById('submit-button')
