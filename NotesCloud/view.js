@@ -25,6 +25,33 @@ let searchInputEl = document.getElementById('search-input')
 let submitBtn = document.getElementById('submit-button')
 let resultContainerEl = document.getElementById('result-container')
 
+formEl.addEventListener('submit', async (event)=>{
+    event.preventDefault();
+
+    const keyword = searchInputEl.value.trim().toLowerCase()
+
+    if(!keyword){
+        await loadInitialData()
+        return
+    }
+
+    const collectionRef = collection(db, "notes");
+    const snapshot = await getDocs(collectionRef);
+    const results = [];
+
+    snapshot.forEach(doc => {
+        results.push(doc.data());
+    });
+
+    const filtered = results.filter(item => {
+        const title = item.topicTitle?.toLowerCase() || ""
+        const course = item.courseCode?.toLowerCase() || ""
+        return title.includes(keyword) || course.includes(keyword)
+    })
+
+    renderResults(filtered)
+})
+
 document.addEventListener("DOMContentLoaded", async() => {
     await loadInitialData()
 })
