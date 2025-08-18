@@ -74,6 +74,12 @@ async function loadInitialData() {
     }
 }
 
+searchInputEl.addEventListener("input", async() => {
+    if(searchInputEl.value.trim() === ''){
+        await loadInitialData()
+    }
+})
+
 
 function downloadFile(url, filename) {
     const downloadUrl = url.replace('raw/upload/', '/upload/fl_attachment/');
