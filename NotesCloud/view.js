@@ -74,34 +74,60 @@ async function loadInitialData() {
     }
 }
 
+
+function downloadFile(url, filename) {
+    const downloadUrl = url.replace('raw/upload/', '/upload/fl_attachment/');
+    const a = document.createElement('a');
+    a.href = downloadUrl;
+    a.setAttribute('download', filename);
+    a.style.display = 'none';
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+}
+
+function addDownloadFlag(url) {
+    // Ensure URL is correctly formatted for download
+    if (url.endsWith(".pdf")) {
+        return url.replace('/raw/upload/', '/upload/fl_attachment/');
+    }
+    return url;
+}
+
 function renderResults(notes) {
-    let html = ''
+    let html = '';
 
     notes.forEach(data => {
         const fileURL = data.fileURL;
         const isImage = /\.(jpg|jpeg|png|gif)$/i.test(fileURL);
+        const isPdf = fileURL.endsWith(".pdf");
         const title = data.topicTitle || "Untitled";
         const course = data.courseCode || "N/A";
         const createdAt = data.createdAt?.toDate?.().toLocaleString() || "";
-
+        const filename = `${title}-${course}.${fileURL.split('.').pop()}`;
 
         html += `
             <div class="p-4 border rounded mb-4 shadow-sm bg-white">
                 <h3 class="text-lg font-semibold mb-1">${title} (${course})</h3>
-                        <p class="text-sm text-gray-500 mb-2">${createdAt}</p>
-                        ${isImage
-                    ? `<img src="${fileURL}" alt="${title}" class="max-w-xs rounded" />
+                <p class="text-sm text-gray-500 mb-2">${createdAt}</p>
+                
+                ${isImage
+            ? `<img src="${fileURL}" alt="${title}" style="max-width: 100%; height: auto; display: block; border-radius: 0.5rem;" />
                     <br />
-                    <a href="${fileURL}" download class="text-blue-600 underline mt-2 inline-block">📥 Download Image</a>
-                    `
-                    : `<a href="${fileURL}" download class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
-                     📄 Download File
-                   </a>`
-                }
+                    <a href="${fileURL}" target="_blank" class="text-blue-600 underline mt-2 inline-block">📥 Download Image</a>`
+            : isPdf
+                ? `
+                    <iframe src="https://docs.google.com/gview?url=${fileURL}&embedded=true" width="100%" height="500px" class="mb-2 border"></iframe>
+                    <a href="${addDownloadFlag(fileURL)}" download class="text-blue-600 underline">📥 Download PDF</a>`
+                : `<a href="${fileURL}" download class="text-blue-600 underline">📥 Download File</a>`
+        }
             </div>
-        `
-    })
+        `;
+    });
 
     resultContainerEl.innerHTML = html;
 }
+
+
+
 

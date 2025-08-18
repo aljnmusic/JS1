@@ -39,9 +39,11 @@ formEl.addEventListener('submit', async (event) => {
     const formData = new FormData()
     formData.append('file', file)
     formData.append('upload_preset', uploadPreset)
+    // formData.append('folder', 'raw/docs')
+    // formData.append('access_mode', 'public')
 
     try{
-        const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/upload`,{
+        const response = await fetch(`https://api.cloudinary.com/v1_1/${cloudName}/raw/upload`,{
             method: "POST",
             body: formData
         })
