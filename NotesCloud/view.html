@@ -25,11 +25,9 @@
 </nav>
 
 
-<div id="home" class="flex flex-grow justify-start align-center flex-col sm:flex-row w-full px-2 py-1 lg:px-16 lg:py-12">
+<div id="home" class="flex flex-grow justify-start align-center flex-col sm:flex-row w-full px-2 py-1 lg:px-2 lg:py-2 lg:mb-16">
     <div class="w-full p-1 m-1 text-center bg-white border border-gray-200 rounded-lg shadow-sm sm:p-2 dark:bg-gray-800 dark:border-gray-700">
-
-
-        <form class="flex items-center max-w-sm mx-auto" id="form">
+        <form class="flex items-center max-w-sm mx-auto w-full" id="form">
             <label for="search-input" class="sr-only">Search</label>
             <div class="relative w-full p-2">
                 <input type="text" id="search-input" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Search branch name..." required />
@@ -45,16 +43,11 @@
         <div id="result-container" class="w-full">
 
         </div>
-
-
-
     </div>
-
-
 </div>
 
 
-<div class="z-50 w-full h-16 bg-white border border-gray-200 rounded left-1/2 dark:bg-gray-700 dark:border-gray-600">
+<div class="lg:fixed lg:bottom-0 lg:left-0 z-50 w-full h-16 bg-white border border-gray-200 rounded left-1/2 dark:bg-gray-700 dark:border-gray-600">
     <div class="grid h-full md:w-full grid-cols-5 mx-auto w-full">
         <a href="home.html" data-tooltip-target="tooltip-home" type="button" class="inline-flex flex-col items-center justify-center px-5 rounded-s-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
 

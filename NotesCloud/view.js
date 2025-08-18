@@ -125,9 +125,9 @@ function renderResults(notes) {
                 ? `
                     <iframe src="https://docs.google.com/gview?url=${fileURL}&embedded=true" width="100%" height="500px" class="mb-2 border"></iframe>
                                         <a href="https://docs.google.com/viewer?url=${encodeURIComponent(fileURL)}" target="_blank" class="text-blue-600 underline">
-                        📄 View PDF Preview
+                        📄 ${filename} PDF Preview
                     </a>`
-                : `<a href="${fileURL}" download class="text-blue-600 underline">📥 Download File</a>`
+                : `<a href="${fileURL}" download class="text-blue-600 underline">📥 Download ${filename}</a>`
         }
             </div>
         `;
