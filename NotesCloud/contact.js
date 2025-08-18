@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-import { getFirestore, collection, add } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyA-WrZ6hS35vXo4OwgmgzxmpJQuf1QKJdo",
@@ -18,20 +18,30 @@ let formEl = document.getElementById('form')
 let nameInputEl = document.getElementById('name-input')
 let emailInputEl = document.getElementById('email-input')
 let messageInputEl = document.getElementById('message')
-let errorMsg =
+let errorMsg = document.getElementById('error-msg')
 let submitBtn = document.getElementById('submit-button')
 
-const data = {
-    name: nameInputEl.value,
-    email: emailInputEl.value,
-    message: messageInputEl.value,
-    timestamp: new Date()
-}
-formEl.addEventListener('submit', (event) => {
+formEl.addEventListener('submit', async (event) => {
     event.preventDefault();
 
-    if(data.name === "" || data.email === "" ||  data.message === "") {
-
+    const data = {
+        name: nameInputEl.value,
+        email: emailInputEl.value,
+        message: messageInputEl.value,
+        timestamp: new Date()
     }
+
+    try {
+        await addDoc(referenceInDB, data)
+        errorMsg.textContent = "Message Sent Successfully"
+
+        nameInputEl.value = "";
+        emailInputEl.value = "";
+        messageInputEl.value = "";
+    } catch (error) {
+        errorMsg.textContent = "An error occured"
+        console.log("An error occured", error)
+    }
+
 
 })
