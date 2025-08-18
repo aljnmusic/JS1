@@ -90,8 +90,13 @@ function renderResults(notes) {
                 <h3 class="text-lg font-semibold mb-1">${title} (${course})</h3>
                         <p class="text-sm text-gray-500 mb-2">${createdAt}</p>
                         ${isImage
-                    ? `<img src="${fileURL}" alt="${title}" class="max-w-xs rounded" />`
-                    : `<a href="${fileURL}" target="_blank" class="text-blue-600 underline">📄 View File</a>`
+                    ? `<img src="${fileURL}" alt="${title}" class="max-w-xs rounded" />
+                    <br />
+                    <a href="${fileURL}" download class="text-blue-600 underline mt-2 inline-block">📥 Download Image</a>
+                    `
+                    : `<a href="${fileURL}" download class="text-blue-600 underline" target="_blank" rel="noopener noreferrer">
+                     📄 Download File
+                   </a>`
                 }
             </div>
         `
