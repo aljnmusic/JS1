@@ -7,6 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <link rel="shortcut icon" href="images/reshot-icon-notes-X9VA8LBE35.svg" type="image/x-icon">
     <title>Features</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const isLoggedIn = localStorage.getItem('loggedIn')
+
+            if(!isLoggedIn){
+                window.location.href = "index.html"
+            }
+        })
+    </script>
 </head>
 <body class="flex flex-col min-h-screen w-full" style="background-image: url(images/home.png); background-size: cover; background-position: right; background-repeat: no-repeat;">
 
@@ -123,6 +132,31 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script>
+    const idleTimeLimit = 5 * 60 * 1000
+    let idleTimer
+
+    function resetTimer() {
+        clearTimeout(idleTimer)
+        idleTimer = setTimeout(logoutUser, idleTimeLimit)
+    }
+
+    function  logoutUser() {
+        alert('You have been logout due to inactivity.')
+        window.location.href = "index.html"
+    }
+
+    window.addEventListener('mousedown', resetTimer)
+    window.addEventListener('keydown', resetTimer)
+    window.addEventListener('scroll', resetTimer)
+    window.addEventListener('click', resetTimer)
+    window.addEventListener('touchstart', resetTimer)
+
+    window.onload = function () {
+        resetTimer()
+    }
+
+</script>
 </body>
 </html>
 
