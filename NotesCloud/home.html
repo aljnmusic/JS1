@@ -102,6 +102,30 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script>
+    const idleTimeLimit = 10 * 60 * 1000
+    let idleTimer
+
+    function resetTimer() {
+        clearTimeout(idleTimer)
+        idleTimer = setTimeout(logoutUser, idleTimeLimit)
+    }
+
+    function  logoutUser() {
+        alert('You have been logout due to inactivity.')
+        window.location.href = "/index.html"
+    }
+
+    window.addEventListener('mousedown', resetTimer)
+    window.addEventListener('keydown', resetTimer)
+    window.addEventListener('scroll', resetTimer)
+    window.addEventListener('click', resetTimer)
+
+    window.onload = function () {
+        resetTimer()
+    }
+
+</script>
 </body>
 </html>
 
