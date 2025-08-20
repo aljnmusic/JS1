@@ -124,6 +124,12 @@
 
     window.onload = function () {
         resetTimer()
+
+        const isLoggedIn = localStorage.getItem('loggedIn')
+
+        if(!isLoggedIn){
+            window.location.href = "/index.html"
+        }
     }
 
 </script>
