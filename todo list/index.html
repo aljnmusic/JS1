@@ -6,9 +6,13 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
     <title>Todo list</title>
 </head>
-<body class="bg-gray-200 font-sans">
-    <div class="bg-red-500">
-
+<body class="bg-gray-200 font-sans flex justify-center items-center">
+    <div class="bg-blue-400 w-full h-32 flex flex-col items-center justify-center">
+        <h1 class="text-center">My to do list</h1>
+        <div class="w-3/4 flex flex-row flex-wrap justify-center">
+            <input type="text" id="myInput" placeholder="Title..." class="w-96">
+            <span class="w-16 bg-gray-950 z-100 text-center" style="background-color: #4A5568;">Add</span>
+        </div>
     </div>
 </body>
 </html>
