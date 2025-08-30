@@ -2,6 +2,13 @@ let addBtn = document.getElementById("addBtn");
 let myInput = document.getElementById("myInput");
 let myUl = document.getElementById("myUl");
 
+
+myInput.addEventListener("keydown", () => {
+    if(event.key === 'Enter'){
+        newList()
+    }
+})
+
 function newList(){
     const inputValue = myInput.value.trim();
 
