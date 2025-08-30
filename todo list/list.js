@@ -29,7 +29,6 @@ function newList(){
     span.className = "close";
 
     li.appendChild(span);
-
 }
 
 addBtn.addEventListener("click", newList);
