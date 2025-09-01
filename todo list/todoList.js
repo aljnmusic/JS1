@@ -15,6 +15,7 @@ function addNewItem(){
     createListItem()
 
     // Save the entire list's current state to local storage.
+    localStorage.setItem("list", JSON.stringify(inputValue));
 
     myInput.value = '';
 }
