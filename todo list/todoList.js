@@ -3,6 +3,7 @@ let myInput = document.getElementById("myInput");
 let myUl = document.getElementById("myUl");
 
 
+addBtn.addEventListener("click", addNewItem)
 
 function addNewItem(){
     let inputValue = myInput.value.trim();
@@ -29,4 +30,16 @@ function createListItem(text){
     span.className = "close";
 
     li.appendChild(span);
+}
+
+function saveListToStorage(){
+    const listItems = document.querySelectorAll('li')
+    const listData = []
+
+    listItem.forEach(element => {
+        listData.push({
+            text:  element.textContent,
+            checked: element.checked
+        })
+    })
 }
