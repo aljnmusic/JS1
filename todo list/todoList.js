@@ -4,7 +4,13 @@ let myUl = document.getElementById("myUl");
 
 
 addBtn.addEventListener("click", addNewItem)
-window.onload("DOMContentLoaded", loadListFromStorage)
+myUl.addEventListener('click', handleListClicks);
+myInput.addEventListener("keypress", function(){
+    if(event.key === "Enter"){
+        addNewItem()
+    }
+})
+window.addEventListener("DOMContentLoaded", loadListFromStorage)
 
 function addNewItem(){
     let inputValue = myInput.value.trim();
@@ -14,16 +20,15 @@ function addNewItem(){
         return;
     }
 
-    createListItem()
-
-    // Save the entire list's current state to local storage.
-    localStorage.setItem("todolist", JSON.stringify(inputValue));
+    createListItem(inputValue)
+    saveListToStorage()
 
     myInput.value = '';
 }
 
 function createListItem(text){
     let li = document.createElement("li");
+    li.textContent = text;
     myUl.appendChild(li);
 
     let span = document.createElement("span");
@@ -41,7 +46,7 @@ function saveListToStorage(){
         let text = element.textContent.replace('\u00D7', '').trim();
         listData.push({
             text:  text,
-            checked: element.checked
+            checked: element.classList.contains('checked')
         })
     })
 
@@ -51,7 +56,7 @@ function saveListToStorage(){
 function loadListFromStorage(){
     const savedList = localStorage.getItem('todolist');
 
-    if(saveList){
+    if(savedList){
         const listData = JSON.parse(savedList);
 
         listData.forEach(element => {
@@ -64,16 +69,14 @@ function loadListFromStorage(){
 }
 
 function handleListClicks(event){
-    document.addEventListener('click', (event)=>{
-        if(event.target.tagName === 'UL'){
+        if(event.target.tagName === 'LI'){
             event.target.classList.toggle("checked")
-            localStorage.setItem('todolist', JSON.stringify(event.target.classList.contains('checked')))
+            saveListToStorage()
         }
 
         if(event.target.classList.contains('close')){
             let parentList =  event.target.parentElement
             parentList.remove()
-            localStorage.setItem('todolist', JSON.stringify(event.target.classList.contains('checked')))
+            saveListToStorage()
         }
-    })
 }
