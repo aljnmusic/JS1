@@ -10,25 +10,25 @@
     <div class="w-full min-h-screen bg-black p-8 m-0">
         <input id="display" type="text" class="w-full h-24 text-7xl text-right font-mono">
         <div class="grid grid-cols-4 gap-4 mt-4">
-            <button class="h-16 text-5xl font-bold bg-gray-200">C</button>
-            <button class="h-16 text-5xl font-bold bg-yellow-200">/</button>
-            <button class="h-16 text-5xl font-bold bg-yellow-200">*</button>
-            <button class="h-16 text-5xl font-bold bg-yellow-200">-</button>
+            <button class="h-16 text-5xl font-bold bg-gray-200" id="input" onclick="clearInput()">C</button>
+            <button class="h-16 text-5xl font-bold bg-yellow-200" onclick="appendOperation('/')">/</button>
+            <button class="h-16 text-5xl font-bold bg-yellow-200" onclick="appendOperation('*')">*</button>
+            <button class="h-16 text-5xl font-bold bg-yellow-200" onclick="appendOperation('-')">-</button>
 
-            <button class="h-16 text-5xl font-bold bg-blue-500">7</button>
-            <button class="h-16 text-5xl font-bold bg-blue-500">8</button>
-            <button class="h-16 text-5xl font-bold bg-blue-500">9</button>
-            <button class="h-16 text-5xl font-bold bg-yellow-200">+</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('7')">7</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('8')">8</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('9')">9</button>
+            <button class="h-16 text-5xl font-bold bg-yellow-200" onclick="appendOperation('+')">+</button>
 
-            <button class="h-16 text-5xl font-bold bg-blue-500">6</button>
-            <button class="h-16 text-5xl font-bold bg-blue-500">5</button>
-            <button class="h-16 text-5xl font-bold bg-blue-500">4</button>
-            <button class="h-16 text-5xl font-bold bg-yellow-200">%</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('6')">6</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('5')">5</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('4')">4</button>
+            <button class="h-16 text-5xl font-bold bg-yellow-200" onclick="appendOperation('%')">%</button>
 
-            <button class="h-16 text-5xl font-bold bg-blue-500">3</button>
-            <button class="h-16 text-5xl font-bold bg-blue-500">2</button>
-            <button class="h-16 text-5xl font-bold bg-blue-500">1</button>
-            <button class="h-16 text-5xl font-bold bg-green-200">=</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('3')">3</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('2')">2</button>
+            <button class="h-16 text-5xl font-bold bg-blue-500" onclick="appendNumber('1')">1</button>
+            <button class="h-16 text-5xl font-bold bg-green-200" onclick="calculateTotal()">=</button>
         </div>
     </div>
 </body>
