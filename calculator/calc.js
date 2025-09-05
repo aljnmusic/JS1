@@ -28,16 +28,16 @@ function calculateTotal(){
         result = parseFloat(current) + parseFloat(previous)
     }
     else if(currentOperation === '-'){
-        document.getElementById('display').value = parseFloat(previous) - parseFloat(current)
+        result = parseFloat(current) - parseFloat(previous)
     }
     else if(currentOperation === '*'){
-        document.getElementById('display').value = parseFloat(previous) * parseFloat(current)
+        result = parseFloat(current) * parseFloat(previous)
     }
     else if(currentOperation === '/'){
-        document.getElementById('display').value = parseFloat(previous) / parseFloat(current)
+        result = parseFloat(current) / parseFloat(previous)
     }
     else if(currentOperation === '%'){
-        document.getElementById('display').value = parseFloat(previous) % parseFloat(current)
+        result = parseFloat(current) % parseFloat(previous)
     }
     else{
         document.getElementById('display').value = 'SyntaxError'
