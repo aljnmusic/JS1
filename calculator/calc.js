@@ -16,7 +16,7 @@ function appendOperation(operation){
     previous = current
     currentOperation = operation
     current = ''
-    document.getElementById('display').value = `${previous} (${operation})`
+    document.getElementById('display').value = `${previous} (${currentOperation})`
 
 }
 
