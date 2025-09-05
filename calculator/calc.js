@@ -4,7 +4,7 @@ let currentOperation = ''
 
 function appendNumber(number){
     current += number
-    document.getElementById("display").value = `${previous} ${currentOperation} ${current}`
+    document.getElementById("display").value = `${current}`
 }
 
 function appendOperation(operation){
@@ -16,7 +16,7 @@ function appendOperation(operation){
     previous = current
     currentOperation = operation
     current = ''
-    document.getElementById('display').value = `${previous} (${currentOperation})`
+    document.getElementById('display').value = `${currentOperation}`
 
 }
 
