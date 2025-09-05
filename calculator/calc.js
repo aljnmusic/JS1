@@ -22,8 +22,10 @@ function appendOperation(operation){
 
 function calculateTotal(){
 
+    let result;
+
     if(currentOperation === '+'){
-        document.getElementById('display').value = parseFloat(current) + parseFloat(previous)
+        result = parseFloat(current) + parseFloat(previous)
     }
     else if(currentOperation === '-'){
         document.getElementById('display').value = parseFloat(previous) - parseFloat(current)
@@ -39,7 +41,13 @@ function calculateTotal(){
     }
     else{
         document.getElementById('display').value = 'SyntaxError'
+        return
     }
+
+    document.getElementById("display").value = result
+    current = result.toString()
+    previous = ''
+    currentOperation = ''
 }
 
 
