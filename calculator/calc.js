@@ -47,7 +47,7 @@ function calculateTotal(){
     document.getElementById("display").value = result
     current = result.toString()
     previous = ''
-    currentOperation = ''
+
 }
 
 
