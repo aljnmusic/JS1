@@ -12,7 +12,6 @@ function appendOperation(operation){
         return
     }
 
-
     previous = current
     currentOperation = operation
     current = ''
