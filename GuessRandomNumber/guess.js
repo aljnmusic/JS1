@@ -17,18 +17,26 @@ startBtn.addEventListener('click', () => {
     let random = Math.floor(Math.random() * 5)
     let guess = 3;
 
-    validateInput()
+    if(!validateInput()){
+        return
+    }
 
-    for(let i = 0; i <= guess; i++) {
+    for(let i = 1; i <= guess; i++) {
         if (Number(inputEl.value) === random) {
             message.textContent = "You're " + inputEl.value + "is correct"
-            return
+            break
         }
-        else if (Number(inputEl.value) !== random) {
-            message.textContent = "You're number is incorrect"
+        else if(Number(inputEl.value) < random) {
+            message.textContent = "Too low! Try again!"
+        }
+        else if(Number(inputEl.value) > random) {
+            message.textContent = "Too high! Try again!"
         }
 
-        guess++;
+        if(i === guess){
+            message.textContent = `Game over! The correct number is ${random}`
+        }
+
     }
 
 
