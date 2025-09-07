@@ -18,7 +18,7 @@ function startGame(){
 function checkGuess(){
     let input = Number(inputEl.value)
 
-    if(!Number.isInteger(input) || input < 1 || input > 100) {
+    if(!Number.isInteger(input) || input < 1 || input > 10) {
         message.textContent = "Enter a valid number from 1-100"
         return
     }
@@ -48,7 +48,7 @@ function checkGuess(){
 function endGame(){
     inputEl.disable = true;
     startBtn.textContent = 'Play again?'
-
+    startBtn.style.backgroundColor = 'blue'
 }
 
 startBtn.addEventListener('click', () => {
