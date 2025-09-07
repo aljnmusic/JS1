@@ -14,7 +14,7 @@ function validateInput(){
     return true
 }
 startBtn.addEventListener('click', () => {
-    let random = Math.floor(Math.random() * 5)
+    let random = Math.floor(Math.random() * 100)
     let guess = 3;
 
     if(!validateInput()){
@@ -32,6 +32,7 @@ startBtn.addEventListener('click', () => {
         else if(Number(inputEl.value) > random) {
             message.textContent = "Too high! Try again!"
         }
+
 
         if(i === guess){
             message.textContent = `Game over! The correct number is ${random}`
