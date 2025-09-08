@@ -14,6 +14,7 @@ formEl.addEventListener('submit', (event)=>{
 
     if(passwordInput.value !== credentials.password) {
         messageEl.textContent = "Incorrect password!";
+        passwordInput.value = "";
     } else{
         window.location.href = "home.html"
     }
