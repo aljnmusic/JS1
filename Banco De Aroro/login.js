@@ -10,7 +10,7 @@ formEl.addEventListener('submit', (event)=>{
     event.preventDefault();
     console.log("Form submitted!");
 
-    localStorage.setItem('username', nameInput.value);
+    localStorage.setItem('username', nameInput.value.split(" ")[0]);
 
 
 
