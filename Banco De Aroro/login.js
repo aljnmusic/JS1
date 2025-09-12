@@ -10,12 +10,14 @@ formEl.addEventListener('submit', (event)=>{
     event.preventDefault();
     console.log("Form submitted!");
 
-    createName(nameInput.value);
+    localStorage.setItem('username', nameInput.value);
 
-    if(passwordInput.value !== credentials.password) {
+
+
+    if(Number(passwordInput.value) !== credentials.password) {
         messageEl.textContent = "Incorrect password!";
         passwordInput.value = "";
     } else{
-        window.location.href = "home.html"
+        window.location.href = "home.html";
     }
 })

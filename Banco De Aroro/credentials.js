@@ -1,5 +1,4 @@
 let credentials = {
-    name: '',
     password: 1234
 }
 
