@@ -26,17 +26,18 @@
     </nav>
 
 
-    <section class="flex flex-grow flex-col">
+    <section class="flex flex-grow flex-col bg-blue-400">
         <div class="h-1/2 text-center mt-4 mb-4">
             <p class="text-6xl font-bold font-serif">Your 1st ever bank in</p><span class="text-8xl font-bold text-blue-900 font-serif">Aroro!</span>
         </div>
 
         <div class="flex flex-grow">
-            <div id="viewDiv" class="w-full mx-2 my-4 rounded border-2 border-blue-200 shadow-lg font-serif text-2xl">
-                view
+            <div id="viewDiv" class="w-full mx-2 my-4 rounded border-2 border-gray-200 shadow-lg font-mono text-xl font-bold flex flex-col justify-between p-2 bg-white">
                 <p id="accountName"></p>
                 <p id="accountBalance"></p>
                 <p id="accountStatus"></p>
+                <p id="currency"></p>
+                <p id="branch"></p>
             </div>
 
             <div id="depositDiv" class="w-full mx-2 my-4 rounded border-2 border-blue-200 shadow-lg">
@@ -53,7 +54,7 @@
 
     <footer class="flex justify-between px-6 py-2 w-full h-14 bottom-0 relative border-2 border-gray-200">
         <div class="cursor-pointer" id="viewImg">
-            <img src="images/analysis.png" class="w-full h-10 bg-red-300">
+            <img src="images/analysis.png" class="w-full h-10">
         </div>
 
         <div class="cursor-pointer" id="saveImg">

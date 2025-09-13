@@ -21,11 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
     let accountName = document.getElementById('accountName');
     let accountBalance =  document.getElementById('accountBalance');
     let balance = credentials.balance.toLocaleString()
-    let status = document.getElementById('accountStatus');
-
+    let status = document.getElementById('accountStatus')
+    let currency = document.getElementById('currency');
+    let branch = document.getElementById('branch');
 
     accountName.textContent = `Account Name: ${storedName}`
-    accountBalance.textContent = `Account Balance: Php ${balance}`
+    accountBalance.textContent = `Account Balance: Ahp ${balance}`
     status.textContent = `Account Status: ${credentials.Status}`
-
+    currency.textContent = `Currency: ${credentials.Currency}`
+    branch.textContent = `Branch: ${credentials.Branch}`
 })
