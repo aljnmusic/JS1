@@ -17,7 +17,7 @@ userEl.textContent = storedName ? `Welcome ${storedName} !` : `Welcome Guest!`
 depositDiv.style.display = 'none';
 withdrawDiv.style.display = 'none';
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function (activeSession) {
     let accountName = document.getElementById('accountName');
     let accountBalance =  document.getElementById('accountBalance');
     let balance = credentials.balance.toLocaleString()
@@ -31,33 +31,12 @@ document.addEventListener('DOMContentLoaded', function () {
     currency.textContent = `Currency: ${credentials.Currency}`
     branch.textContent = `Branch: ${credentials.Branch}`
 
-    let activeSession = localStorage.getItem('activeSession');
-    if(activeSession) {
-        toggleVisibility(activeSession)
-    }
-
 })
 
-function toggleVisibility(activeSection) {
-    const divs = ['viewDiv', 'depositDiv', 'withdrawDiv']
+saveImg.addEventListener('click', function () {
+    viewDiv.style.display = 'none';
+    withdrawDiv.style.display = 'none';
+    depositDiv.style.display = 'block'
 
-    divs.forEach(divsId => {
-        document.getElementById(divsId).classList.add('hidden')
-    })
-
-    document.getElementById(activeSection).style.display = 'block'
-}
-
-saveImg.addEventListener('click', function(){
-    toggleVisibility('depositDiv')
-
-    localStorage.setItem('activeSession', 'depositDiv')
-});
-
-// saveImg.addEventListener('click', function () {
-//     viewDiv.classList.add('hidden')
-//     withdrawDiv.classList.add('hidden')
-//     depositDiv.style.display = 'block'
-//
-//     localStorage.setItem('activeSession', 'depositDiv')
-// })
+    sessionStorage.setItem('activeSession', 'depositDiv')
+})
