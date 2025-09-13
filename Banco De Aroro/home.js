@@ -1,3 +1,5 @@
+import { credentials } from "./credentials.js";
+
 let userEl = document.getElementById('username')
 let storedName = localStorage.getItem('username');
 
@@ -17,5 +19,13 @@ withdrawDiv.style.display = 'none';
 
 document.addEventListener('DOMContentLoaded', function () {
     let accountName = document.getElementById('accountName');
+    let accountBalance =  document.getElementById('accountBalance');
+    let balance = credentials.balance.toLocaleString()
+    let status = document.getElementById('accountStatus');
+
+
     accountName.textContent = `Account Name: ${storedName}`
+    accountBalance.textContent = `Account Balance: Php ${balance}`
+    status.textContent = `Account Status: ${credentials.Status}`
+
 })
