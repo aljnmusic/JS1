@@ -11,3 +11,11 @@ let depositDiv = document.getElementById('depositDiv');
 let withdrawDiv = document.getElementById('withdrawDiv');
 
 userEl.textContent = storedName ? `Welcome ${storedName} !` : `Welcome Guest!`
+
+depositDiv.style.display = 'none';
+withdrawDiv.style.display = 'none';
+
+document.addEventListener('DOMContentLoaded', function () {
+    let accountName = document.getElementById('accountName');
+    accountName.textContent = `Account Name: ${storedName}`
+})

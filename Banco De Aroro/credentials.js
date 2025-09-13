@@ -1,5 +1,6 @@
 let credentials = {
-    password: 1234
+    password: 1234,
+    balance: 0
 }
 
 function createName(newName){
