@@ -17,7 +17,7 @@ userEl.textContent = storedName ? `Welcome ${storedName} !` : `Welcome Guest!`
 depositDiv.style.display = 'none';
 withdrawDiv.style.display = 'none';
 
-document.addEventListener('DOMContentLoaded', function (activeSession) {
+document.addEventListener('DOMContentLoaded', function () {
     let accountName = document.getElementById('accountName');
     let accountBalance =  document.getElementById('accountBalance');
     let balance = credentials.balance.toLocaleString()
@@ -30,6 +30,13 @@ document.addEventListener('DOMContentLoaded', function (activeSession) {
     status.textContent = `Account Status: ${credentials.Status}`
     currency.textContent = `Currency: ${credentials.Currency}`
     branch.textContent = `Branch: ${credentials.Branch}`
+
+    const activeSession = sessionStorage.getItem('activeSession');
+    if(activeSession === 'depositDiv') {
+        viewDiv.style.display = 'none';
+        withdrawDiv.style.display = 'none';
+        depositDiv.style.display = 'block';
+    }
 
 })
 
