@@ -12,4 +12,4 @@ let viewDiv = document.getElementById('viewDiv');
 let depositDiv = document.getElementById('depositDiv');
 let withdrawDiv = document.getElementById('withdrawDiv');
 
-userEl.textContent = `Welcome ${storedName} !`;
+userEl.textContent = storedName ? `Welcome ${storedName} !` : `Welcome Guest!`
