@@ -31,3 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
     currency.textContent = `Currency: ${credentials.Currency}`
     branch.textContent = `Branch: ${credentials.Branch}`
 })
+
+saveImg.addEventListener('click', function () {
+    viewDiv.classList.add('hidden')
+    withdrawDiv.classList.add('hidden')
+    depositDiv.classList.remove('hidden')
+    depositDiv.style.display = 'block'
+})
