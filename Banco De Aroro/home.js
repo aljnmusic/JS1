@@ -30,11 +30,34 @@ document.addEventListener('DOMContentLoaded', function () {
     status.textContent = `Account Status: ${credentials.Status}`
     currency.textContent = `Currency: ${credentials.Currency}`
     branch.textContent = `Branch: ${credentials.Branch}`
+
+    let activeSession = localStorage.getItem('activeSession');
+    if(activeSession) {
+        toggleVisibility(activeSession)
+    }
+
 })
 
-saveImg.addEventListener('click', function () {
-    viewDiv.classList.add('hidden')
-    withdrawDiv.classList.add('hidden')
-    depositDiv.classList.remove('hidden')
-    depositDiv.style.display = 'block'
-})
+function toggleVisibility(activeSection) {
+    const divs = ['viewDiv', 'depositDiv', 'withdrawDiv']
+
+    divs.forEach(divsId => {
+        document.getElementById(divsId).classList.add('hidden')
+    })
+
+    document.getElementById(activeSection).style.display = 'block'
+}
+
+saveImg.addEventListener('click', function(){
+    toggleVisibility('depositDiv')
+
+    localStorage.setItem('activeSession', 'depositDiv')
+});
+
+// saveImg.addEventListener('click', function () {
+//     viewDiv.classList.add('hidden')
+//     withdrawDiv.classList.add('hidden')
+//     depositDiv.style.display = 'block'
+//
+//     localStorage.setItem('activeSession', 'depositDiv')
+// })
