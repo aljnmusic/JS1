@@ -59,3 +59,7 @@ withdrawImg.addEventListener('click', function(){
 
     sessionStorage.setItem('activeSession', 'withdrawDiv')
 })
+
+logoutImg.addEventListener('click', function(){
+    window.location.href = 'index.html'
+})
