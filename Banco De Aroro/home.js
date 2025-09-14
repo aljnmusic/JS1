@@ -24,9 +24,10 @@ document.addEventListener('DOMContentLoaded', function () {
     let status = document.getElementById('accountStatus')
     let currency = document.getElementById('currency');
     let branch = document.getElementById('branch');
+    let newBal = localStorage.getItem('deposit');
 
     accountName.textContent = `Account Name: ${storedName}`
-    accountBalance.textContent = `Account Balance: Ahp ${balance}`
+    accountBalance.textContent = `Account Balance: Ahp ${newBal}`
     status.textContent = `Account Status: ${credentials.Status}`
     currency.textContent = `Currency: ${credentials.Currency}`
     branch.textContent = `Branch: ${credentials.Branch}`
@@ -48,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         withdrawDiv.style.display = 'none';
         viewDiv.style.display = 'block';
     } else {
-        window.addEventListener('DOMContentLoaded', activeSession)
+        viewDiv.style.display = 'block';
     }
 
 })
@@ -56,7 +57,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function deposit(){
     let form = document.getElementById('depositForm');
     let inputAmount =  document.getElementById('inputAmount');
-    let balance = credentials.balance
+    // let balance = credentials.
+    let balance = localStorage.getItem('deposit');
     let currentBal = document.getElementById('currentBalance')
     currentBal.textContent = `Current Balance: ${balance.toLocaleString()}`
 
@@ -65,9 +67,12 @@ function deposit(){
 
         let depositAmount = Number(inputAmount.value)
 
-        balance += depositAmount;
+        let newBal = balance += depositAmount;
 
-        currentBal.textContent = `Current Balance: ${balance.toLocaleString()}`
+        localStorage.setItem('deposit', JSON.stringify(newBal))
+
+
+        currentBal.textContent = `Current Balance: ${localStorage.getItem('deposit')}`
 
         inputAmount.value = ''
     })
