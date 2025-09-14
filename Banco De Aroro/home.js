@@ -47,3 +47,11 @@ saveImg.addEventListener('click', function () {
 
     sessionStorage.setItem('activeSession', 'depositDiv')
 })
+
+withdrawImg.addEventListener('click', function(){
+    viewDiv.style.display = 'none';
+    depositDiv.style.display = 'none';
+    withdrawDiv.style.display = 'block';
+
+    sessionStorage.setItem('activeSession', 'withdrawDiv')
+})
