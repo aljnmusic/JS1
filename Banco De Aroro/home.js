@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', function () {
     currency.textContent = `Currency: ${credentials.Currency}`
     branch.textContent = `Branch: ${credentials.Branch}`
 
+    deposit()
+
+
     const activeSession = sessionStorage.getItem('activeSession');
     if(activeSession === 'depositDiv') {
         viewDiv.style.display = 'none';
@@ -40,9 +43,21 @@ document.addEventListener('DOMContentLoaded', function () {
         viewDiv.style.display = 'none';
         depositDiv.style.display = 'none';
         withdrawDiv.style.display = 'block';
+    } else if(activeSession === 'viewDiv'){
+        depositDiv.style.display = 'none';
+        withdrawDiv.style.display = 'none';
+        viewDiv.style.display = 'block';
+    } else {
+        window.addEventListener('DOMContentLoaded', activeSession)
     }
 
 })
+
+function deposit(){
+    let balance = credentials.balance.toLocaleString()
+    let currentBal = document.getElementById('currentBalance')
+    currentBal.textContent = `Current Balance: ${balance}`
+}
 
 saveImg.addEventListener('click', function () {
     viewDiv.style.display = 'none';
