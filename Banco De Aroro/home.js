@@ -36,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function () {
         viewDiv.style.display = 'none';
         withdrawDiv.style.display = 'none';
         depositDiv.style.display = 'block';
+    } else if(activeSession === 'withdrawDiv') {
+        viewDiv.style.display = 'none';
+        depositDiv.style.display = 'none';
+        withdrawDiv.style.display = 'block';
     }
 
 })
