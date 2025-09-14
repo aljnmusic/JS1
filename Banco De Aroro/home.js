@@ -63,3 +63,11 @@ withdrawImg.addEventListener('click', function(){
 logoutImg.addEventListener('click', function(){
     window.location.href = 'index.html'
 })
+
+viewImg.addEventListener('click', function(){
+    depositDiv.style.display = 'none';
+    withdrawDiv.style.display = 'none';
+    viewDiv.style.display = 'block';
+
+    sessionStorage.setItem('activeSession', 'viewDiv')
+})
