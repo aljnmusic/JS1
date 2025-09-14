@@ -24,10 +24,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let status = document.getElementById('accountStatus')
     let currency = document.getElementById('currency');
     let branch = document.getElementById('branch');
-    let newBal = localStorage.getItem('deposit');
 
     accountName.textContent = `Account Name: ${storedName}`
-    accountBalance.textContent = `Account Balance: Ahp ${newBal}`
+    accountBalance.textContent = `Account Balance: Ahp ${balance}`
     status.textContent = `Account Status: ${credentials.Status}`
     currency.textContent = `Currency: ${credentials.Currency}`
     branch.textContent = `Branch: ${credentials.Branch}`
