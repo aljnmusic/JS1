@@ -60,13 +60,15 @@ function deposit(){
     let currentBal = document.getElementById('currentBalance')
     currentBal.textContent = `Current Balance: ${balance}`
 
-    form.addEventListener('submit', function(){
-        let balance = credentials.balance.toLocaleString()
-        currentBal.value += balance
+    form.addEventListener('submit', () => {
+        let depositAmount = Number(inputAmount.value)
+
+        balance += depositAmount;
+
+        currentBal.textContent = `Current Balance: ${balance.toLocaleString()}`
 
         inputAmount.value = ''
     })
-
 
 }
 
