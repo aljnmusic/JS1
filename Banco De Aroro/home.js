@@ -56,11 +56,13 @@ document.addEventListener('DOMContentLoaded', function () {
 function deposit(){
     let form = document.getElementById('depositForm');
     let inputAmount =  document.getElementById('inputAmount');
-    let balance = credentials.balance.toLocaleString()
+    let balance = credentials.balance
     let currentBal = document.getElementById('currentBalance')
-    currentBal.textContent = `Current Balance: ${balance}`
+    currentBal.textContent = `Current Balance: ${balance.toLocaleString()}`
 
-    form.addEventListener('submit', () => {
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
         let depositAmount = Number(inputAmount.value)
 
         balance += depositAmount;
