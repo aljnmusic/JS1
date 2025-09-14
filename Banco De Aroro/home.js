@@ -54,9 +54,20 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 function deposit(){
+    let form = document.getElementById('depositForm');
+    let inputAmount =  document.getElementById('inputAmount');
     let balance = credentials.balance.toLocaleString()
     let currentBal = document.getElementById('currentBalance')
     currentBal.textContent = `Current Balance: ${balance}`
+
+    form.addEventListener('submit', function(){
+        let balance = credentials.balance.toLocaleString()
+        currentBal.value += balance
+
+        inputAmount.value = ''
+    })
+
+
 }
 
 saveImg.addEventListener('click', function () {
