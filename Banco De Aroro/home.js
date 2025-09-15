@@ -12,17 +12,19 @@ let viewDiv = document.getElementById('viewDiv');
 let depositDiv = document.getElementById('depositDiv');
 let withdrawDiv = document.getElementById('withdrawDiv');
 
+localStorage.setItem('balance', 2000)
+let balance = Number(localStorage.getItem('balance'));
+
 userEl.textContent = storedName ? `Welcome ${storedName} !` : `Welcome Guest!`
 
 depositDiv.style.display = 'none';
 withdrawDiv.style.display = 'none';
 
 document.addEventListener('DOMContentLoaded', function () {
-    localStorage.setItem('balance', 2000)
+
 
     let accountName = document.getElementById('accountName');
     let accountBalance =  document.getElementById('accountBalance');
-    let balance = localStorage.getItem('balance');
     let status = document.getElementById('accountStatus')
     let currency = document.getElementById('currency');
     let branch = document.getElementById('branch');
@@ -58,10 +60,8 @@ document.addEventListener('DOMContentLoaded', function () {
 function deposit(){
     let form = document.getElementById('depositForm');
     let inputAmount =  document.getElementById('inputAmount');
-    // let balance = credentials.
-    let balance = localStorage.getItem('deposit');
     let currentBal = document.getElementById('currentBalance')
-    currentBal.textContent = `Current Balance: ${balance.toLocaleString()}`
+    currentBal.textContent = `Current Balance: ${balance}`
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -70,10 +70,10 @@ function deposit(){
 
         let newBal = balance += depositAmount;
 
-        localStorage.setItem('deposit', JSON.stringify(newBal))
+        localStorage.setItem('balance', JSON.stringify(newBal))
 
 
-        currentBal.textContent = `Current Balance: ${localStorage.getItem('deposit')}`
+        currentBal.textContent = `Current Balance: ${localStorage.getItem('balance')}`
 
         inputAmount.value = ''
     })
