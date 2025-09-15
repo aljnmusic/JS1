@@ -87,7 +87,12 @@ function deposit(){
 }
 
 
+function appendNumbers(number){
+    current += number
+    document.getElementById('display').value = current
+}
 
+window.appendNumbers = appendNumbers
 
 
 saveImg.addEventListener('click', function () {
