@@ -12,6 +12,8 @@ let viewDiv = document.getElementById('viewDiv');
 let depositDiv = document.getElementById('depositDiv');
 let withdrawDiv = document.getElementById('withdrawDiv');
 
+let cancelBtn = document.getElementById('cancel-button');
+
 localStorage.setItem('balance', 2000)
 let balance = Number(localStorage.getItem('balance'));
 
@@ -93,6 +95,10 @@ function appendNumbers(number){
 }
 
 window.appendNumbers = appendNumbers
+
+cancelBtn.addEventListener('click', function(){
+    document.getElementById('display').value = ''
+})
 
 
 saveImg.addEventListener('click', function () {
