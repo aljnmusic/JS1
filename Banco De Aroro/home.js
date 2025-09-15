@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
     branch.textContent = `Branch: ${credentials.Branch}`
 
     deposit()
+    updateBalanceOnDeposit()
 
 
 
@@ -104,11 +105,14 @@ cancelBtn.addEventListener('click', function(){
 })
 
 withdrawBtn.addEventListener('click', function(){
-    balance -= current;
+    let balance = Number(localStorage.getItem('balance'))
+
+    balance -= Number(current);
     withdrawBal.textContent = `Balance: ${balance}`
     current = ''
     document.getElementById('display').value = ''
 
+    localStorage.setItem('balance', balance)
 })
 
 
@@ -117,16 +121,26 @@ saveImg.addEventListener('click', function () {
     withdrawDiv.style.display = 'none';
     depositDiv.style.display = 'block'
 
+    updateBalanceOnDeposit()
+
     sessionStorage.setItem('activeSession', 'depositDiv')
 })
 
 withdrawImg.addEventListener('click', function(){
+
     viewDiv.style.display = 'none';
     depositDiv.style.display = 'none';
     withdrawDiv.style.display = 'block';
 
     sessionStorage.setItem('activeSession', 'withdrawDiv')
 })
+
+function updateBalanceOnDeposit(){
+    let balance = Number(localStorage.getItem('balance'))
+
+    let depositBalance = document.getElementById('currentBalance')
+    depositBalance.textContent = `Current Balance: ${balance}`
+}
 
 logoutImg.addEventListener('click', function(){
     window.location.href = 'index.html'
