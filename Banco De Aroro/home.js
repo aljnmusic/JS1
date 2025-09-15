@@ -78,6 +78,16 @@ function deposit(){
 
         inputAmount.value = ''
     })
+}
+
+function withdraw(){
+    let currentBalance = document.getElementById('currentBal')
+}
+
+let current = ''
+
+function appendNumber(number){
+    current += number
 
 }
 

@@ -54,12 +54,12 @@
             </div>
 
 
-            <div id="withdrawDiv"  class="w-full mx-2 my-4 rounded border-2 border-blue-200 shadow-lg font-mono text-xl font-bold  p-4 bg-white">
-                <div class="bg-gray-500 h-3/4">
-                    <input class="w-full border-2 border-blue-300 rounded">
+            <div id="withdrawDiv"  class="flex flex-grow w-full mx-2 my-4 rounded border-2 border-blue-200 shadow-lg font-mono text-xl font-bold  p-4 bg-white">
+                <div class="bg-gray-500 h-76 rounded">
+                    <input class="w-full border-2 border-blue-300 rounded text-right h-10">
                     <div class="grid grid-cols-3 gap-4 p-2">
-                        <div class="bg-white p-1 text-center border border-gray-300 rounded">1</div>
-                        <div class="bg-white p-1 text-center border border-gray-300 rounded">2</div>
+                        <div class="bg-white p-1 text-center border border-gray-300 rounded" onclick="appendNumber('1')">1</div>
+                        <div class="bg-white p-1 text-center border border-gray-300 rounded" onclick="appendNumber('2')">2</div>
                         <div class="bg-white p-1 text-center border border-gray-300 rounded">3</div>
                         <div class="bg-white p-1 text-center border border-gray-300 rounded">4</div>
                         <div class="bg-white p-1 text-center border border-gray-300 rounded">5</div>
@@ -68,10 +68,17 @@
                         <div class="bg-white p-1 text-center border border-gray-300 rounded">8</div>
                         <div class="bg-white p-1 text-center border border-gray-300 rounded">9</div>
                         <div class="bg-white p-1 text-center border border-gray-300 rounded">10</div>
-                        <button class="bg-white p-1 text-center border border-gray-300 rounded">Cancel</button>
-                        <button class="bg-white p-1 text-center border border-gray-300 rounded">Withdraw</button>
+                        <button class="bg-white p-2 text-center border border-gray-300 rounded w-full sm:w-auto text-xs sm:text-sm md:text-base">
+                            Cancel
+                        </button>
+                        <button class="bg-white p-2 text-center border border-gray-300 rounded w-full sm:w-auto text-xs sm:text-sm md:text-base">
+                            Withdraw
+                        </button>
                     </div>
+                </div>
 
+                <div class="bg-red-500 mt-4">
+                    <p id="currentBal" class="text-center">sdfsf</p>
                 </div>
             </div>
 
