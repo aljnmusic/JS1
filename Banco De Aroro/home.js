@@ -13,6 +13,8 @@ let depositDiv = document.getElementById('depositDiv');
 let withdrawDiv = document.getElementById('withdrawDiv');
 
 let cancelBtn = document.getElementById('cancel-button');
+let withdrawBtn = document.getElementById('withdraw-button')
+let withdrawBal = document.getElementById('currentBal')
 
 localStorage.setItem('balance', 2000)
 let balance = Number(localStorage.getItem('balance'));
@@ -97,7 +99,16 @@ function appendNumbers(number){
 window.appendNumbers = appendNumbers
 
 cancelBtn.addEventListener('click', function(){
+    current = ''
     document.getElementById('display').value = ''
+})
+
+withdrawBtn.addEventListener('click', function(){
+    balance -= current;
+    withdrawBal.textContent = `Balance: ${balance}`
+    current = ''
+    document.getElementById('display').value = ''
+
 })
 
 
