@@ -18,9 +18,11 @@ depositDiv.style.display = 'none';
 withdrawDiv.style.display = 'none';
 
 document.addEventListener('DOMContentLoaded', function () {
+    localStorage.setItem('balance', 2000)
+
     let accountName = document.getElementById('accountName');
     let accountBalance =  document.getElementById('accountBalance');
-    let balance = credentials.balance.toLocaleString()
+    let balance = localStorage.getItem('balance');
     let status = document.getElementById('accountStatus')
     let currency = document.getElementById('currency');
     let branch = document.getElementById('branch');
