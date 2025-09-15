@@ -17,10 +17,12 @@ let balance = Number(localStorage.getItem('balance'));
 
 let current = ''
 
+
 userEl.textContent = storedName ? `Welcome ${storedName} !` : `Welcome Guest!`
 
 depositDiv.style.display = 'none';
 withdrawDiv.style.display = 'none';
+
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -83,6 +85,9 @@ function deposit(){
         inputAmount.value = ''
     })
 }
+
+
+
 
 
 saveImg.addEventListener('click', function () {
