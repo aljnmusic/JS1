@@ -61,6 +61,7 @@ function deposit(){
     let form = document.getElementById('depositForm');
     let inputAmount =  document.getElementById('inputAmount');
     let currentBal = document.getElementById('currentBalance')
+    let balance = Number(localStorage.getItem('balance')) || 2000;
     currentBal.textContent = `Current Balance: ${balance}`
 
     form.addEventListener('submit', (event) => {
@@ -68,9 +69,9 @@ function deposit(){
 
         let depositAmount = Number(inputAmount.value)
 
-        let newBal = balance += depositAmount;
+        balance += depositAmount;
 
-        localStorage.setItem('balance', JSON.stringify(newBal))
+        localStorage.setItem('balance', balance)
 
 
         currentBal.textContent = `Current Balance: ${localStorage.getItem('balance')}`
@@ -101,9 +102,14 @@ logoutImg.addEventListener('click', function(){
 })
 
 viewImg.addEventListener('click', function(){
+    let balance = Number(localStorage.getItem('balance')) || 2000;
+
     depositDiv.style.display = 'none';
     withdrawDiv.style.display = 'none';
     viewDiv.style.display = 'block';
+
+    let accountBalance = document.getElementById('accountBalance');
+    accountBalance.textContent = `Account Balance: Ahp ${balance}`;
 
     sessionStorage.setItem('activeSession', 'viewDiv')
 })
