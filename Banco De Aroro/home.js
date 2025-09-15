@@ -15,6 +15,8 @@ let withdrawDiv = document.getElementById('withdrawDiv');
 localStorage.setItem('balance', 2000)
 let balance = Number(localStorage.getItem('balance'));
 
+let current = ''
+
 userEl.textContent = storedName ? `Welcome ${storedName} !` : `Welcome Guest!`
 
 depositDiv.style.display = 'none';
@@ -27,7 +29,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let accountBalance =  document.getElementById('accountBalance');
     let status = document.getElementById('accountStatus')
     let currency = document.getElementById('currency');
-    let branch = document.getElementById('branch');
+    let branch = document.getElementById('branch')
+
 
     accountName.textContent = `Account Name: ${storedName}`
     accountBalance.textContent = `Account Balance: Ahp ${balance}`
@@ -36,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
     branch.textContent = `Branch: ${credentials.Branch}`
 
     deposit()
+
 
 
     const activeSession = sessionStorage.getItem('activeSession');
@@ -80,16 +84,6 @@ function deposit(){
     })
 }
 
-function withdraw(){
-    let currentBalance = document.getElementById('currentBal')
-}
-
-let current = ''
-
-function appendNumber(number){
-    current += number
-
-}
 
 saveImg.addEventListener('click', function () {
     viewDiv.style.display = 'none';
