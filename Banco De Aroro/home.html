@@ -14,6 +14,7 @@
         .visible{
             display: block;
         }
+
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -30,13 +31,13 @@
     </nav>
 
 
-    <section class="flex flex-grow flex-col bg-blue-400">
+    <section class="flex flex-grow flex-col">
         <div class="h-1/2 text-center mt-4 mb-4">
             <p class="text-6xl font-bold font-serif">Your 1st ever bank in</p><span class="text-8xl font-bold text-blue-900 font-serif">Aroro!</span>
         </div>
 
         <div class="flex flex-grow">
-            <div id="viewDiv" class="w-full mx-2 my-4 rounded border-2 border-gray-200 shadow-lg font-mono text-xl font-bold flex flex-col justify-between p-2 bg-white">
+            <div id="viewDiv" class="w-full mx-2 my-4 rounded border-2 border-gray-200 shadow-lg font-mono text-xl font-bold flex flex-col items-center text-center space-y-4 p-4 bg-white bg-gray-50">
                 <p id="accountName"></p>
                 <p id="accountBalance"></p>
                 <p id="accountStatus"></p>
@@ -44,7 +45,9 @@
                 <p id="branch"></p>
             </div>
 
-            <div id="depositDiv" class="w-full mx-2 my-4 rounded border-2 border-blue-200 shadow-lg font-mono text-xl font-bold  p-4 bg-white">
+
+
+            <div id="depositDiv" class="w-full mx-2 my-4 rounded border-2 border-blue-200 shadow-lg font-mono text-xl font-bold  p-4 bg-gray-100">
                 <form id="depositForm" class="flex flex-col justify-center items-center w-full h-full">
                     <p id="currentBalance" class="text-center">Current Balance: $500</p>
                     <label for="inputAmount" class="text-sm font-mono text-center mt-4">Enter amount to deposit</label>
