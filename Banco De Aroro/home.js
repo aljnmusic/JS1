@@ -108,7 +108,7 @@ withdrawBtn.addEventListener('click', function(){
     let balance = Number(localStorage.getItem('balance'))
 
     balance -= Number(current);
-    withdrawBal.textContent = `Balance: ${balance}`
+    withdrawBal.textContent = `Current Balance: ${balance}`
     current = ''
     document.getElementById('display').value = ''
 
