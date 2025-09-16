@@ -106,8 +106,15 @@ cancelBtn.addEventListener('click', function(){
 
 withdrawBtn.addEventListener('click', function(){
     let balance = Number(localStorage.getItem('balance'))
+    let zero = 0
 
     balance -= Number(current);
+
+    if(balance < zero){
+        withdrawBal.textContent = 'Insufficient Funds!'
+        return
+    }
+
     withdrawBal.textContent = `Current Balance: ${balance}`
     current = ''
     document.getElementById('display').value = ''
