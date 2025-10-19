@@ -1,7 +1,7 @@
 # JS2-v1.01 Projects
 
 [![GitHub followers](https://img.shields.io/github/followers/aljnmusic?style=social)](https://github.com/aljnmusic)  
-[![GitHub license](https://img.shields.io/github/license/aljnmusic/JS2-v1.01)](LICENSE)  
+[![GitHub license](https://img.shields.io/github/lisence/aljnmusic/JS2-v1.01)](LISENCE)  
 [![GitHub stars](https://img.shields.io/github/stars/aljnmusic/JS2-v1.01?style=social)](https://github.com/aljnmusic/JS2-v1.01/stargazers)
 
 This repository showcases various JavaScript projects aimed at enhancing web development skills. Each project incorporates key concepts such as DOM manipulation, event handling, API integration, and more, while providing interactive user experiences.
@@ -157,3 +157,20 @@ To run any of these projects, simply open the `index.html` file in your browser.
 ## Contributing
 
 Contributions are welcome! If you encounter bugs, have suggestions for features, or want to improve these projects, feel free to open an issue or submit a pull
+
+## 📄 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
+## Contact
+
+If you have any questions or would like to collaborate, don't hesitate to reach out!
+
+- Email: galosjohnaljenne@gmail.com  
+- GitHub: [aljnmusic](https://github.com/aljnmusic)
+
+---
+
+*Made with ❤️ by John Aljenne Galos*
